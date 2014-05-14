@@ -1,0 +1,70 @@
+body {
+    background: #fff;
+}
+
+.account-masthead, .site-footer {
+    background: #125194;
+    color: #fff;
+}
+
+.account-masthead .account ul li a {
+    color: #fff;
+}
+
+.masthead {
+    background: #FFF;
+}
+
+.masthead a {
+    color: #125194;
+}
+
+.masthead a:hover {
+    color: #FFF;
+}
+
+.main, *[role="main"] {
+    background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #A00054;
+    font-weight: lighter;
+}
+
+a {
+    color: #1CB2D7;
+    /*color: #125194;*/
+}
+
+.site-footer a {
+    color: #FFF;
+}
+
+.nav-item.active, .nav-aside li.active {
+    background-color: #1CB2D7;
+}
+
+.nav-item.active>a, .nav-aside li.active a {
+    background-color: #1CB2D7;
+}
+
+.nav-item.active>a:before, .nav-aside li.active a:before {
+    background-image: none;
+}
+
+.homepage .module-search .module-content {
+    background-color: #1CB2D7;
+}
+
+.homepage .module-search .module-content .heading {
+    color: #FFF;
+}
+
+.homepage .module-search .tags {
+    background-color:  #125194;
+}
+
+.homepage .module-search .tags h3 {
+    color: #FFF;
+}
