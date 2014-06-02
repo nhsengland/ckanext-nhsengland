@@ -1,2 +1,4 @@
 ckanext_nhsengland.egg-info/*
 *.pyc
+build/*
+dist/*
