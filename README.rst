@@ -9,5 +9,5 @@ Installation Instructions:
 
 Configure CKAN:
 
-* Add to ckan.plugins: nhsengland_plugin
+* Add to ckan.plugins: nhsengland_skin
 * Change ckan.site_logo to: /images/nhsengland_logo.png
