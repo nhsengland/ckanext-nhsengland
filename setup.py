@@ -25,6 +25,6 @@ setup(
     entry_points='''
         [ckan.plugins]
         # Add plugins here, e.g.
-        nhsengland_plugin=ckanext.nhsengland.plugin:NHSEnglandPlugin
+        nhsengland_skin=ckanext.nhsengland.plugin:NHSEnglandPlugin
     ''',
 )
