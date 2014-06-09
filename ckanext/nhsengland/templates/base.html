@@ -114,5 +114,23 @@
       {# defined in the config.ini under "ckan.template_footer_end" #}
       {{ g.template_footer_end | safe }}
     {%- endblock %}
+
+    <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+    <style type="text/css" media="screen, projection">
+      @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+    </style>
+    <script type="text/javascript">
+      if (typeof(Zenbox) !== "undefined") {
+      Zenbox.init({
+      dropboxID:   "20261052",
+      url:         "https://nhse.zendesk.com",
+      tabTooltip:  "Feedback",
+      tabImageURL: "https://p3.zdassets.com/external/zenbox/images/tab_feedback_right.png",
+      tabColor:    "#A00054",
+      tabPosition: "Right"
+      });
+      }
+    </script>
+
   </body>
 </html>
