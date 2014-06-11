@@ -116,6 +116,22 @@
       {{ g.template_footer_end | safe }}
     {%- endblock %}
 
+    <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+    <style type="text/css" media="screen, projection">
+      @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+    </style>
+    <script type="text/javascript">
+      if (typeof(Zenbox) !== "undefined") {
+      Zenbox.init({
+      dropboxID:   "20261052",
+      url:         "https://nhse.zendesk.com",
+      tabTooltip:  "Feedback",
+      tabImageURL: "https://p3.zdassets.com/external/zenbox/images/tab_feedback_right.png",
+      tabColor:    "#A00054",
+      tabPosition: "Right"
+      });
+      }
+    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
