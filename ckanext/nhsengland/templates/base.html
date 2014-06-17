@@ -69,6 +69,7 @@
     {%- block styles %}
       {% resource g.main_css[6:] %}
       <link rel="stylesheet" href="/css/nhsengland.css" />
+      <link rel="stylesheet" href="/css/introjs.min.css" />
     {% endblock %}
 
     {% block head_extras %}
@@ -88,7 +89,7 @@
   {# Allows custom attributes to be added to the <body> tag #}
   <body{% block bodytag %} data-site-root="{{ h.url('/', locale='default', qualified=true) }}" data-locale-root="{{ h.url('/', qualified=true) }}" {% endblock %}>
 
-    {{ h.flash_error('This site is currently in BETA. <a href="/about">click here for <b>More Information</a></b>', allow_html=True) or "" }}
+    {{ h.flash_error('<span id="beta-flash" data-intro="Remember, this site is in BETA (it may contain bugs or might not work correctly).">This site is currently in BETA. <a href="/about">click here for <b>More Information</a></b></span>', allow_html=True) or "" }}
     {#
     The page block allows you to add content to the page. Most of the time it is
     recommended that you extend one of the page.html templates in order to get
@@ -116,6 +117,8 @@
       {{ g.template_footer_end | safe }}
     {%- endblock %}
 
+    <script type="text/javascript" src="/js/intro.min.js"></script>
+
     <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
     <style type="text/css" media="screen, projection">
       @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
@@ -130,6 +133,9 @@
       tabColor:    "#A00054",
       tabPosition: "Right"
       });
+      var zenbox = document.getElementById("zenbox_tab");
+      zenbox.setAttribute('data-intro', 'Click the "Feedback" tab to tell us your thoughts, report bugs and request features.');
+      zenbox.setAttribute('data-position', 'right');
       }
     </script>
     <script>

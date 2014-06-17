@@ -1,0 +1,5 @@
+{% if tags %}
+  <section class="tags" data-intro="Tags annotated to this dataset describe, in general terms, what this dataset relates to." data-position="top">
+    {% snippet 'snippets/tag_list.html', tags=tags, _class='tag-list well' %}
+  </section>
+{% endif %}
