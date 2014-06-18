@@ -88,7 +88,7 @@
   {# Allows custom attributes to be added to the <body> tag #}
   <body{% block bodytag %} data-site-root="{{ h.url('/', locale='default', qualified=true) }}" data-locale-root="{{ h.url('/', qualified=true) }}" {% endblock %}>
 
-    {{ h.flash_error('This site is currently in BETA. <a href="/about">click here for <b>More Information</a></b>', allow_html=True) or "" }}
+    {{ h.flash_error('This site is currently in BETA. <a href="/about">Click here for <strong>More Information</strong></a>. Alternatively, <strong><a href="http://myaccount.zendesk.com/account/dropboxes/20261052" onClick="script:Zenbox.show(); return false;">send us feedback!</a></strong>', allow_html=True) or "" }}
     {#
     The page block allows you to add content to the page. Most of the time it is
     recommended that you extend one of the page.html templates in order to get
@@ -126,9 +126,9 @@
       dropboxID:   "20261052",
       url:         "https://nhse.zendesk.com",
       tabTooltip:  "Feedback",
-      tabImageURL: "https://p3.zdassets.com/external/zenbox/images/tab_feedback_right.png",
+      tabImageURL: "https://p3.zdassets.com/external/zenbox/images/tab_feedback.png",
       tabColor:    "#A00054",
-      tabPosition: "Right"
+      tabPosition: "Left"
       });
       }
     </script>
