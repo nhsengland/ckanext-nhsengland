@@ -92,6 +92,7 @@
             <option value="{{ option[0] }}" {% if option[0] == data.private|trim %}selected="selected"{% endif %}>{{ option[1] }}</option>
             {% endfor %}
           </select>
+          <span class="help-block"><a href="/about#public-vs-private">More information on Public vs. Private datasets.</a></span>
         </div>
       </div>
     {% endblock %}
