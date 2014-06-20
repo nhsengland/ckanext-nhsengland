@@ -39,7 +39,7 @@ then itself be extended to add/remove blocks of functionality. #}
              href="#"
              onClick="script:Zenbox.show(); return false;"
              >
-            {% block delete_button_text %}{{ _('Request Deletion') }}{% endblock %}
+            {% block request_deletion_button_text %}{{ _('Request Deletion') }}{% endblock %}
           </a>
         {% endif %}
         {% if h.check_access('sysadmin') %}
