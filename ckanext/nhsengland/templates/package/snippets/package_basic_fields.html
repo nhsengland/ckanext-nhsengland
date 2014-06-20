@@ -92,7 +92,13 @@
             <option value="{{ option[0] }}" {% if option[0] == data.private|trim %}selected="selected"{% endif %}>{{ option[1] }}</option>
             {% endfor %}
           </select>
-          <span class="help-block"><a href="/about#public-vs-private">More information on Public vs. Private datasets.</a></span>
+          <span class="info-block info-inline">
+            <i class="icon-info-sign"></i>
+            {% trans %}
+            More information on
+            <a href="/about#public-vs-private">Public vs. Private datasets.</a>
+            {% endtrans %}
+          </span>
         </div>
       </div>
     {% endblock %}
