@@ -2,6 +2,21 @@ body {
     background: #fff;
 }
 
+.super-masthead {
+    padding: 25px 0px;
+}
+
+.header-strapline {
+    float: left;
+    width: 310px;
+}
+
+.header-image {
+    width: 140px;
+    height: 87px;
+    float: right;
+}
+
 .account-masthead, .site-footer {
     background: #125194;
     color: #fff;
@@ -31,6 +46,15 @@ h1, h2, h3, h4, h5, h6 {
     color: #A00054;
     font-weight: lighter;
 }
+
+
+.header-strapline h2 {
+    font-family: "FrutigerLight", Arial, sans-serif;
+    color: black;    
+    font-size: 30px;
+    line-height: 1.2;
+}
+
 
 a {
     color: #1CB2D7;

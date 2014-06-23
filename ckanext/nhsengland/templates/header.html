@@ -1,4 +1,21 @@
 {% block header_wrapper %}
+<header class="super-masthead">
+  <div class="container">
+    <hgroup class="header-strapline">
+      <h1>
+      {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
+      </h1>     
+    </hgroup>
+    <hgroup class="{{ g.header_class }}">
+      {% block header_logo %}
+          <a class="logo" href="{{ h.url('home') }}"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
+      {% endblock %}
+    </hgroup>
+
+  </div>
+</header>
+
+
 {% block header_account %}
   <header class="account-masthead">
     <div class="container">
@@ -69,20 +86,6 @@
   {% endblock %}
   <div class="container">
     {# The .header-image class hides the main text and uses image replacement for the title #}
-    <hgroup class="{{ g.header_class }}">
-
-      {% block header_logo %}
-        {% if g.site_logo %}
-          <a class="logo" href="{{ h.url('home') }}"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
-        {% else %}
-          <h1>
-            <a href="{{ h.url('home') }}">{{ g.site_title }}</a>
-          </h1>
-          {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
-        {% endif %}
-      {% endblock %}
-
-    </hgroup>
 
     <div class="content">
 
