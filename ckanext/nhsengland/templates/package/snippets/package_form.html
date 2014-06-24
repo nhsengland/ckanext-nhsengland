@@ -34,7 +34,7 @@ then itself be extended to add/remove blocks of functionality. #}
       {% endblock %}
       {% block delete_button %}
 
-        {% if h.check_access('package_delete', {'id': data.id}) and not data.state == 'deleted' %}
+        {% if h.check_access('package_delete', {'id': data.id}) and not data.state == 'deleted' and not h.check_access('sysadmin') %}
           <a class="btn btn-danger pull-left"
              href="#"
              onClick="script:Zenbox.show(); return false;"
