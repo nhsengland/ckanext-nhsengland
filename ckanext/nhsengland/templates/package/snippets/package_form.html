@@ -51,7 +51,10 @@ then itself be extended to add/remove blocks of functionality. #}
           </a>
         {% endif %}
       {% endblock %}
-      <button class="btn btn-primary" type="submit" name="save">{% block save_button_text %}{{ _('Next: Add Data') }}{% endblock %}</button>
+      {% resource 'nhsengland/confirm-dataset-update.js' %}
+      <button class="btn btn-primary" type="submit" name="save" data-module="confirm-dataset-update" data-private="{{data.private}}">
+	{% block save_button_text %}{{ _('Next: Add Data') }}{% endblock %}
+      </button>
       {{ form.required_message() }}
     </div>
   {% endblock %}
