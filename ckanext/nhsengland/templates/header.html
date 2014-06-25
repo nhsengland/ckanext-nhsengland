@@ -19,6 +19,13 @@
 {% block header_account %}
   <header class="account-masthead" >
     <div class="container">
+      {% if c.userobj %}
+	<!-- NOTE: This is used in the popover-context module. you need something on the page -->
+	<!-- with a class of account and the data-me attribute set for it to function. -->
+	<!-- TODO MAYBE: We might like to refactor this dead DOM element away.  ?-->
+        <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}" >
+        </div>
+      {% endif %}
 
       {% block header_site_navigation %}
         <nav class="section navigation" >
@@ -86,10 +93,6 @@
 
         </nav>
 
-	<!-- Pulled from around the account nav ul -->
-	<!-- TODO: Figure out what data-module="me" is all about -->
-        <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}" >
-        </div>
 
 
 
