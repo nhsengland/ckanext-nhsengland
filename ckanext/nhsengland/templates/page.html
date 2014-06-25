@@ -11,35 +11,39 @@
     {% include "header.html" %}
   {% endblock -%}
 
+  <div class="container" id="header-sub-nav">
+    <div class="row">
+    {% block flash %}
+    <div class="span9">
+      {% set flash_messages = h.flash.pop_messages() | list %}
+      <div class="flash-messages">
+	{% for message in flash_messages %}
+          <div class="alert fade in {{ message.category }}">
+            {{ h.literal(message) }}
+	  </div>
+	{% endfor %}
+      </div>
+    </div>
+    {% endblock %}
+    {% block header_site_search %}
+    <div class="span3">
+      <form class="section site-search simple-input pull-right" action="{% url_for controller='package', action='search' %}" method="get" data-intro="Use this search box to find interesting datasets. For the best results, use only keywords rather than whole sentences.">
+        <div class="field">
+          <label for="field-sitewide-search">{{ _('Search Datasets') }}</label>
+          <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search datasets...') }}" />
+          <button class="btn-search" type="submit"><i class="icon-search"></i></button>
+        </div>
+      </form>
+    </div>
+    {% endblock %}
+    </div>
+  </div>
+
   {# The content block allows you to replace the content of the page if needed #}
   {%- block content %}
     {% block maintag %}<div role="main">{% endblock %}
       <div id="content" class="container">
         {% block main_content %}
-          {% block flash %}
-            {% set flash_messages = h.flash.pop_messages() | list %}
-            <div class="flash-messages">
-              {% for message in flash_messages %}
-                <div class="alert fade in {{ message.category }}">
-                  {{ h.literal(message) }}
-                </div>
-              {% endfor %}
-            </div>
-          {% endblock %}
-
-          {% block toolbar %}
-            <div class="toolbar">
-              {% block breadcrumb %}
-                {% if self.breadcrumb_content() | trim %}
-                  <ol class="breadcrumb">
-                    {% snippet 'snippets/home_breadcrumb_item.html' %}
-                    {% block breadcrumb_content %}{% endblock %}
-                  </ol>
-                {% endif %}
-              {% endblock %}
-            </div>
-          {% endblock %}
-
           <div class="wrapper{% block wrapper_class %}{% endblock %}{% if self.secondary()|trim == '' %} no-nav{% endif %}">
 
             {#
@@ -48,6 +52,8 @@
             #}
             {% block pre_primary %}
             {% endblock %}
+
+
 
             {% block primary %}
               <div class="primary">
@@ -62,8 +68,23 @@
                     <p>Some content for the page</p>
                   {% endblock %}
                 #}
+		    {% block toolbar %}
+		    <div class="toolbar">
+		      {% block breadcrumb %}
+                        {% if self.breadcrumb_content() | trim %}
+                          <ol class="breadcrumb">
+			    {% snippet 'snippets/home_breadcrumb_item.html' %}
+			    {% block breadcrumb_content %}{% endblock %}
+			  </ol>
+			{% endif %}
+	              {% endblock %}
+		    </div>
+		  {% endblock %}
+
                 {% block primary_content %}
                   <article class="module">
+
+
                     {% block page_header %}
                       <header class="module-content page-header">
                         {% if self.content_action() | trim %}
@@ -109,6 +130,33 @@
             {% endblock %}
           </div>
         {% endblock %}
+
+      <footer>
+	<ul class="nav nav-pills  pull-left">
+	  <li>
+	    &copy; NHS England 2014 
+	  </li>
+
+	  <li>
+	    <a href="http://www.england.nhs.uk/terms-and-conditions/">Terms &amp; Conditions</a>
+	  </li>
+	  <li>
+	    <a href="http://www.england.nhs.uk/privacy-policy/">Privacy &amp; Cookies</a>
+	  </li>
+	  <li>
+	    <a href="http://www.england.nhs.uk/comment-policy/">Social Media &amp; Comment Moderation</a>
+	  </li>
+	  <li>
+	    <a href="http://www.england.nhs.uk/accessibility/">Accessibility</a>
+	  </li>
+	</ul>
+
+	</ul>
+	{% block footer_lang %}
+          {% snippet "snippets/language_selector.html" %}
+        {% endblock %}
+      </footer>
+	    
       </div>
     </div>
   {% endblock -%}
