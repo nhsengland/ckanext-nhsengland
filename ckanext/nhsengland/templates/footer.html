@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="container">
+    {% block footer_content %}
+      <h2>
+      {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
+      </h2>     
+      {% endblock %}
+  </div>
+</footer>
