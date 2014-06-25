@@ -1,9 +1,80 @@
+/* DOM level Resets */
 body {
     background: #fff;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: #A00054;
+    font-weight: lighter;
+}
+
+a {
+    color: #1CB2D7;
+    /*color: #125194;*/
+}
+
+
+/* Bootstrap 2.x overrides*/
+
+.container {
+    width: 1000px;
+}
+
+.nav {
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.nav ul {
+    margin-bottom: 10px;
+}
+
+.nav li {
+    border-left: 1px solid white;
+}
+.nav-pills>li>a.image {
+    padding: 4px;
+}
+
+.nav li:first-of-type {
+    border-left: none;
+}
+
+.nav > li.active {
+    background: #a00054;
+}
+
+.nav > li.active a {
+    background: inherit;
+}
+
+.nav >li:hover,
+.nav >li.active:hover{
+    background: #a00054;
+}
+
+.nav > li > a:hover,
+.nav > li.active > a:hover{
+    background: inherit;
+}
+
+.nav-item.active, .nav-aside li.active {
+    background-color: #1CB2D7;
+}
+
+.nav-item.active>a, .nav-aside li.active a {
+    background-color: #1CB2D7;
+}
+
+.nav-item.active>a:before, .nav-aside li.active a:before {
+    background-image: none;
+}
+
+
+/* CKAN utility class overrides - mostly for NHSE Brand compliance  */
+
 .super-masthead {
-    padding: 25px 0px;
+    padding: 25px 0px 12px 0px;
 }
 
 .header-strapline {
@@ -18,7 +89,7 @@ body {
 }
 
 .account-masthead, .site-footer {
-    background: #125194;
+    background: #0072c6;
     color: #fff;
 }
 
@@ -42,12 +113,6 @@ body {
     background: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #A00054;
-    font-weight: lighter;
-}
-
-
 .header-strapline h2 {
     font-family: "FrutigerLight", Arial, sans-serif;
     color: black;    
@@ -55,26 +120,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
-
-a {
-    color: #1CB2D7;
-    /*color: #125194;*/
+.navigation a {
+    color: white;
 }
 
 .site-footer a {
     color: #FFF;
-}
-
-.nav-item.active, .nav-aside li.active {
-    background-color: #1CB2D7;
-}
-
-.nav-item.active>a, .nav-aside li.active a {
-    background-color: #1CB2D7;
-}
-
-.nav-item.active>a:before, .nav-aside li.active a:before {
-    background-image: none;
 }
 
 .homepage .module-search .module-content {

@@ -19,10 +19,24 @@
 {% block header_account %}
   <header class="account-masthead">
     <div class="container">
-      {% block header_account_container_content %}
+
+      {% block header_site_navigation %}
+        <nav class="section navigation" data-intro="This section contains links to important pages on the site.">
+          <ul class="nav nav-pills pull-left">
+            {% block header_site_navigation_tabs %}
+              {{ h.build_nav_main(
+	        ('home', _('Home')),
+                ('search', _('Datasets')),
+                ('organizations_index', _('Organizations')),
+                ('group_index', _('Groups')),
+                ('about', _('About'))
+              ) }}
+            {% endblock %}
+            <li><a href="javascript:void(0)" onClick="javascript:introJs().start();" data-intro="Clicking the 'Help' link will display on-page walkthrough information. Click the 'Next' and 'Back' buttons below to navigate the walkthrough. Clicking 'Skip' returns you to the page." data-step="1">Help</a></li>
+          </ul>
+            <ul class="nav nav-pills pull-right">
+
         {% if c.userobj %}
-          <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}" data-intro="We notice that you're logged in. Important links about your account can be found here.">
-            <ul class="unstyled">
               {% block header_account_logged %}
               {% if c.userobj.sysadmin %}
                 <li>
@@ -60,20 +74,33 @@
                 </li>
               {% endblock %}
               {% endblock %}
-            </ul>
-          </div>
         {% else %}
-          <nav class="account not-authed" data-intro="Use the links in this area to either sign up for a new account or log in with an existing one.">
-            <ul class="unstyled">
+          <!-- <nav class="account not-authed" data-intro="Use the links in this area to either sign up for a new account or log in with an existing one."> -->
+            <!-- <ul class="unstyled"> -->
               {% block header_account_notlogged %}
               <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
               {% if h.check_access('user_create') %}
                 <li>{% link_for _('Register'), controller='user', action='register', class_='sub' %}</li>
               {% endif %}
               {% endblock %}
-            </ul>
-          </nav>
+          <!--   </ul> -->
+          <!-- </nav> -->
         {% endif %}
+            </ul>
+
+        </nav>
+
+	<!-- Pulled from around the account nav ul -->
+          <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}" data-intro="We notice that you're logged in. Important links about your account can be found here.">
+          </div>
+
+
+
+
+      {% endblock %}
+
+
+      {% block header_account_container_content %}
       {% endblock %}
     </div>
   </header>
@@ -84,26 +111,9 @@
       <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
     {% endif %}
   {% endblock %}
+
   <div class="container">
-    {# The .header-image class hides the main text and uses image replacement for the title #}
-
     <div class="content">
-
-      {% block header_site_navigation %}
-        <nav class="section navigation" data-intro="This section contains links to important pages on the site.">
-          <ul class="nav nav-pills">
-            {% block header_site_navigation_tabs %}
-              {{ h.build_nav_main(
-                ('search', _('Datasets')),
-                ('organizations_index', _('Organizations')),
-                ('group_index', _('Groups')),
-                ('about', _('About'))
-              ) }}
-            {% endblock %}
-            <li><a href="javascript:void(0)" onClick="javascript:introJs().start();" data-intro="Clicking the 'Help' link will display on-page walkthrough information. Click the 'Next' and 'Back' buttons below to navigate the walkthrough. Clicking 'Skip' returns you to the page." data-step="1">Help</a></li>
-          </ul>
-        </nav>
-      {% endblock %}
 
       {% block header_site_search %}
         <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get" data-intro="Use this search box to find interesting datasets. For the best results, use only keywords rather than whole sentences.">
