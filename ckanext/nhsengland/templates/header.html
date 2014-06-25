@@ -17,12 +17,12 @@
 
 
 {% block header_account %}
-  <header class="account-masthead">
+  <header class="account-masthead" >
     <div class="container">
 
       {% block header_site_navigation %}
-        <nav class="section navigation" data-intro="This section contains links to important pages on the site.">
-          <ul class="nav nav-pills pull-left">
+        <nav class="section navigation" >
+          <ul class="nav nav-pills pull-left" data-intro="This section contains links to important pages on the site.">
             {% block header_site_navigation_tabs %}
               {{ h.build_nav_main(
 	        ('home', _('Home')),
