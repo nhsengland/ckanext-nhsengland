@@ -168,7 +168,7 @@ a {
 }
 
 .wrapper {
-    
+    background: none !important;
     border: none;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
