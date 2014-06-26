@@ -254,3 +254,7 @@ footer ul.nav li {
 .homepage .module-search .tags h3 {
     color: #FFF;
 }
+
+a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
+    z-index: 2;
+}
