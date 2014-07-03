@@ -1,6 +1,7 @@
 /* DOM level Resets */
 body {
     background: #fff;
+    margin-top: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -257,4 +258,21 @@ footer ul.nav li {
 
 a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
     z-index: 2;
+}
+
+.beta-banner {
+    margin: 0;
+    padding: 6px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f0f0;
+    border-bottom: 1px solid #c6898b;
+    color: #b55457;
+    text-align: center;
+}
+
+.beta-banner a {
+    color: #b55457;
 }
