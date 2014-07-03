@@ -2,21 +2,19 @@
 
 <div class="module-content box">
   <header>
-    {% if intro %}
-      {{ h.render_markdown(intro) }}
-    {% else %}
-      <h1 class="page-heading">{{ _("Welcome to CKAN") }}</h1>
+      <h1 class="page-heading">{{ _("NHSEngland Data Catalogue") }}</h1>
       <p>
-        {% trans %}This is a nice introductory paragraph about CKAN or the site
-        in general. We don't have any copy to go here yet but soon we will
+        {% trans %}Here you will find the key data that NHS England uses to
+        conduct its core business. Primarily a resource for analysts, this
+        website organises and catalogues datasets from across the wider health
+        system to provide a one-stop-shop for the data NHS England requires
+        for routine reporting.
         {% endtrans %}
       </p>
-    {% endif %}
   </header>
   <section class="featured media-overlay">
-    <h2 class="media-heading">{{ _("Next Generation Enterprise Advanced Open Health Data Cloud") }}</h2>
     <a class="media-image" href="#">
-      <img src="/images/health_data.jpg" alt="Placeholder" width="420" height="220" />
+      <img src="/images/gp-carousel1.jpg" alt="Placeholder" width="420" height="220" />
     </a>
   </section>
 </div>
