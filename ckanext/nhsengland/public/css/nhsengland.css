@@ -302,3 +302,8 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
 .beta-banner a {
     color: #b55457;
 }
+
+.format-label {
+   background-image: url("/images/sprite-ckan-icons.png");
+   background: url("/images/sprite-resource-icons.png");
+}
