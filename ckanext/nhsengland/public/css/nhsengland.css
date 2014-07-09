@@ -314,9 +314,12 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
     margin-bottom: 24px;
 }
 
-.dataset-heading a {
+.dataset-heading a,
+.resource-item a.heading  {
     color: #a00054; text-decoration: none;
 }
+
+
 
 /* These next four rules come straight from the branding guidelines */
 /* Let's try to make sure they stay here! */
