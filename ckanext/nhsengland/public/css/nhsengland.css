@@ -297,6 +297,7 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
     border-bottom: 1px solid #c6898b;
     color: #b55457;
     text-align: center;
+    z-index: 999999;
 }
 
 .beta-banner a {
@@ -329,6 +330,6 @@ a:hover {color: #003893;}
 h1, h2, h3 {color:#0072c6;} 
 
 /* Well - except for these, which are different :( */
-.nav a:hover {
+.account-masthead .nav a:hover {
     color: white;
 }
