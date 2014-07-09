@@ -297,6 +297,7 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
     border-bottom: 1px solid #c6898b;
     color: #b55457;
     text-align: center;
+    z-index: 999999;
 }
 
 .beta-banner a {
@@ -306,4 +307,29 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
 .format-label {
    background-image: url("/images/sprite-ckan-icons.png");
    background: url("/images/sprite-resource-icons.png");
+}
+
+.pre-footer {
+    border-top: 1px solid black;
+    padding: 24px 0px;
+    margin-bottom: 24px;
+}
+
+.dataset-heading a,
+.resource-item a.heading  {
+    color: #a00054; text-decoration: none;
+}
+
+
+
+/* These next four rules come straight from the branding guidelines */
+/* Let's try to make sure they stay here! */
+body {font-family: Arial, Helvetica, sans-serif; color: #000000;}  
+a {color: #a00054; text-decoration: none;}
+a:hover {color: #003893;} 
+h1, h2, h3 {color:#0072c6;} 
+
+/* Well - except for these, which are different :( */
+.account-masthead .nav a:hover {
+    color: white;
 }

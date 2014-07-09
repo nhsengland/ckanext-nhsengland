@@ -1,9 +1,34 @@
+<div class="container">
+  <div class="row">
+    <footer class="pre-footer span12">
+      <ul class="nav nav-pills  pull-left">
+	<li>
+	  &copy; NHS England 2014 
+	</li>
+
+	<li>
+	  <a href="http://www.england.nhs.uk/terms-and-conditions/">Terms &amp; Conditions</a>
+	</li>
+	<li>
+	  <a href="http://www.england.nhs.uk/privacy-policy/">Privacy &amp; Cookies</a>
+	</li>
+	<li>
+	  <a href="http://www.england.nhs.uk/comment-policy/">Social Media &amp; Comment Moderation</a>
+	</li>
+	<li>
+	  <a href="http://www.england.nhs.uk/accessibility/">Accessibility</a>
+	</li>
+      </ul>
+    </footer>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="container">
     {% block footer_content %}
-      <h2>
+    <h2>
       {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
-      </h2>     
-      {% endblock %}
+    </h2>     
+    {% endblock %}
   </div>
 </footer>

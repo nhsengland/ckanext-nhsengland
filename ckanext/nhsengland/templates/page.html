@@ -26,15 +26,6 @@
     </div>
     {% endblock %}
     {% block header_site_search %}
-    <div class="span3">
-      <form class="section site-search simple-input pull-right" action="{% url_for controller='package', action='search' %}" method="get" data-intro="Use this search box to find interesting datasets. For the best results, use only keywords rather than whole sentences.">
-        <div class="field">
-          <label for="field-sitewide-search">{{ _('Search Datasets') }}</label>
-          <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search datasets...') }}" />
-          <button class="btn-search" type="submit"><i class="icon-search"></i></button>
-        </div>
-      </form>
-    </div>
     {% endblock %}
     </div>
   </div>
@@ -131,31 +122,6 @@
           </div>
         {% endblock %}
 
-      <footer>
-	<ul class="nav nav-pills  pull-left">
-	  <li>
-	    &copy; NHS England 2014 
-	  </li>
-
-	  <li>
-	    <a href="http://www.england.nhs.uk/terms-and-conditions/">Terms &amp; Conditions</a>
-	  </li>
-	  <li>
-	    <a href="http://www.england.nhs.uk/privacy-policy/">Privacy &amp; Cookies</a>
-	  </li>
-	  <li>
-	    <a href="http://www.england.nhs.uk/comment-policy/">Social Media &amp; Comment Moderation</a>
-	  </li>
-	  <li>
-	    <a href="http://www.england.nhs.uk/accessibility/">Accessibility</a>
-	  </li>
-	</ul>
-
-	</ul>
-	{% block footer_lang %}
-          {% snippet "snippets/language_selector.html" %}
-        {% endblock %}
-      </footer>
 	    
       </div>
     </div>
