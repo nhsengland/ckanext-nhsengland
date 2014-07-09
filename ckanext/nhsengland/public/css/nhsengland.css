@@ -308,6 +308,11 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
    background: url("/images/sprite-resource-icons.png");
 }
 
+.pre-footer {
+    border-top: 1px solid black;
+    padding: 24px 0px;
+    margin-bottom: 24px;
+}
 
 /* These next four rules come straight from the branding guidelines */
 /* Let's try to make sure they stay here! */
