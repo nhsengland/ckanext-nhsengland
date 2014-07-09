@@ -1,3 +1,30 @@
+      <footer>
+	<ul class="nav nav-pills  pull-left">
+	  <li>
+	    &copy; NHS England 2014 
+	  </li>
+
+	  <li>
+	    <a href="http://www.england.nhs.uk/terms-and-conditions/">Terms &amp; Conditions</a>
+	  </li>
+	  <li>
+	    <a href="http://www.england.nhs.uk/privacy-policy/">Privacy &amp; Cookies</a>
+	  </li>
+	  <li>
+	    <a href="http://www.england.nhs.uk/comment-policy/">Social Media &amp; Comment Moderation</a>
+	  </li>
+	  <li>
+	    <a href="http://www.england.nhs.uk/accessibility/">Accessibility</a>
+	  </li>
+	</ul>
+
+	</ul>
+	{% block footer_lang %}
+        {# {% snippet "snippets/language_selector.html" %} #}
+        {% endblock %}
+      </footer>
+
+
 <footer class="site-footer">
   <div class="container">
     {% block footer_content %}
