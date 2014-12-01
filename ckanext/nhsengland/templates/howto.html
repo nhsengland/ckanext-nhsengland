@@ -1,0 +1,68 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Howto') }}{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {% block howto %}
+          <h1 class="page-heading">{{ _('Howto...') }}</h1>
+
+          <p>Use the screen-casts and notes below to learn "how to" do various
+          common tasks on this site. If you have any comments, suggestions or
+          ideas for new "howtos" please use the
+          <a href="http://myaccount.zendesk.com/account/dropboxes/20261052" onclick="script:Zenbox.show(); return false;">feedback</a> tab found on the left
+          hand side of all the pages on this site.</p>
+          <hr/>
+
+          <h2>Find Datasets</h2>
+          <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/E64sFvvxNYY?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <p>Key points:</p>
+          <ul>
+            <li>Use the search box on the front page.</li>
+            <li>On the results page you can re-order the results and constrain them by publisher, tag, group and/or file type.</li>
+            <li>Clicking on a dataset takes you to its page containing information and resources associated with the dataset (such as data files).</li>
+            <li>Tabular data (as found in CSV files) can be previewed.</li>
+            <li>Use the datasets, publishers and groups items in the main menu at the top to find datasets according to how they are organised in the catalogue.</li>
+          </ul>
+          <hr/>
+
+          <h2>Work with and Organise Datasets</h2>
+          <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/sMRp7wZOwg8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <p>Key points:</p>
+          <ul>
+            <li>Dataset pages contain lots of useful information: title, description, tags, list of resources (CSV files etc) and arbitrary meta-data.</li>
+            <li>Resources can be "explored" via preview of tabular data and some very simple graphing / charting functionality.</li>
+            <li>Datasets can belong to groups, have their history tracked in an activity stream and be linked to related items such as other datasets.</li>
+            <li>Following a dataset means your own dashboard will be populated with activity from the dataset. If you have configured things correctly, the data catalogue will also email when there is new activity.</li>
+            <li>Groups are named sets of datasets and function like named groups of bookmarks (so you can easily find your stuff).</li>
+            <li>It is possible to manage groups so you and your colleagues can collaborate in curating useful groups of datasets.</li>
+          </ul>
+          <hr/>
+
+          <h2>Publish Data in the Catalogue</h2>
+          <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/lmdihIsN6sQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <p>Key points:</p>
+          <ul>
+            <li>Use open data formats where possible! (CSV good, Excel bad)</li>
+            <li>You must have an "editor role" in a publishing organisation within the data catalogue in order to publish datasets.</li>
+            <li>To create a new dataset click on the "Datasets" item in the main menu and then the "Add Dataset" button on the resulting page.</li>
+            <li>Fill in the form making sure you provide as much information as possible:
+            <ul>
+                <li>The title of the dataset is used as the basis for the dataset's URL - a link directly to the dataset.</li>
+                <li>The description should include what the dataset describes, its purpose, notes about methodology and other useful information.</li>
+                <li>Tags are an easy to use mechanism for categorising datasets. If possible re-use the suggested tags.</li>
+                <li>Make sure you select the correct publisher organisation (if you belong to more than one) and set the correct level of visibility (we suggest you start with the dataset being private and only make it public when you're ready). Private datasets are only visible to members of the publishing organisation.</li>
+            </ul>
+            </li>
+            <li>Upload various resources remembering to indicate the type of file you're uploading (CSV, PDF, DOC etc).</li>
+            <li>Please provide the raw data for any reports you upload.</li>
+            <li>Remember to add useful metadata!</li>
+            <li>The use "Manage" button on each dataset's page to update its settings.</li>
+          </ul>
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}
