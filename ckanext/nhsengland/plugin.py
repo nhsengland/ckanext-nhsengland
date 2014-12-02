@@ -2,15 +2,89 @@ import routes.mapper
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import ckan.lib.base as base
+import datetime
+import time
 
 
-class NHSEnglandPlugin(plugins.SingletonPlugin):
+def is_date(value):
+    """
+    Ensures that the passed in value is a valid date expressed as YYYY-MM-DD.
+    """
+    try:
+        date = datetime.date(*time.strptime(value, '%Y-%m-%d')[:3])
+    except:
+        raise toolkit.Invalid("Not a valid date. Must be YYYY-MM-DD.")
+    return value
+
+
+def create_frequencies():
+    """
+    Defines the choices for publication frequency associated with a dataset:
+
+    Hourly, Daily, Weekly, Monthly, Quarterly, Annually, Other
+    """
+    frequencies = [
+        u'Hourly',
+        u'Daily',
+        u'Weekly',
+        u'Monthly',
+        u'Quarterly',
+        u'Annually',
+        u'Other',
+    ]
+    user = toolkit.get_action('get_site_user')({'ignore_auth': True}, {})
+    context = {'user': user['name']}
+    try:
+        data = {'id': 'frequency'}
+        toolkit.get_action('vocabulary_show')(context, data)
+    except toolkit.ObjectNotFound:
+        data = {'name': 'frequency'}
+        vocab = toolkit.get_action('vocabulary_create')(context, data)
+        for tag in frequencies:
+            data = {'name': tag, 'vocabulary_id': vocab['id']}
+            toolkit.get_action('tag_create')(context, data)
+
+
+def frequencies():
+    """
+    Returns a list of tags representing valid publication frequencies.
+    """
+    create_frequencies()
+    try:
+        tag_list = toolkit.get_action('tag_list')
+        frequencies = tag_list(data_dict={'vocabulary_id': 'frequency'})
+        return frequencies
+    except toolkit.ObjectNotFound:
+        return None
+
+
+class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     """
     Mainly theme related "stuff".
+
+    The customisation of dataset metadata was implemented in line with this
+    tutorial:
+
+    http://docs.ckan.org/en/latest/extensions/adding-custom-fields.html#customizing-dataset-and-resource-metadata-fields-using-idatasetform
+
+    The additional metadata fields are:
+
+    Coverage start date
+    Coverage end date
+    Origin
+    Frequency
+    Homepage
+
+    Should we need more, it is relatively easy to add them.
     """
 
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IRoutes)
+    plugins.implements(plugins.IDatasetForm)
+    plugins.implements(plugins.ITemplateHelpers)
+
+    def get_helpers(self):
+        return {'frequencies': frequencies}
 
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
@@ -28,6 +102,61 @@ class NHSEnglandPlugin(plugins.SingletonPlugin):
 
     def after_map(self, route_map):
         return route_map
+
+    def _modify_package_schema(self, schema):
+        """
+        Adds fields and validators to the schema.
+        """
+        schema.update({
+            'start_date': [toolkit.get_validator('ignore_missing'),
+                           is_date,
+                           toolkit.get_converter('convert_to_extras'), ],
+            'end_date': [toolkit.get_validator('ignore_missing'),
+                         is_date,
+                         toolkit.get_converter('convert_to_extras'), ],
+            'origin': [toolkit.get_validator('ignore_missing'),
+                       toolkit.get_converter('convert_to_extras'), ],
+            'frequency': [toolkit.get_validator('ignore_missing'),
+                          toolkit.get_converter('convert_to_tags')
+                                               ('frequency'), ],
+            'homepage': [toolkit.get_validator('ignore_missing'),
+                         toolkit.get_converter('convert_to_extras'), ],
+        })
+        return schema
+
+    def create_package_schema(self):
+        schema = super(ExampleIDatasetFormPlugin, self).create_package_schema()
+        schema = self._modify_package_schema(schema)
+        return schema
+
+    def update_package_schema(self):
+        schema = super(ExampleIDatasetFormPlugin, self).update_package_schema()
+        schema = self._modify_package_schema(schema)
+        return schema
+
+    def show_package_schema(self):
+        schema = super(ExampleIDatasetFormPlugin, self).show_package_schema()
+        schema['tags']['__extras'].append(toolkit.get_converter('free_tags_only'))
+        schema.update({
+            'start_date': [toolkit.get_converter('convert_from_extras'),
+                           toolkit.get_validator('ignore_missing'), ],
+            'end_date': [toolkit.get_converter('convert_from_extras'),
+                         toolkit.get_validator('ignore_missing'), ],
+            'origin': [toolkit.get_converter('convert_from_extras'),
+                       toolkit.get_validator('ignore_missing'), ],
+            'frequency': [toolkit.get_validator('convert_from_tags')
+                                               ('frequency'),
+                          toolkit.get_validator('ignore_missing'), ],
+            'homepage': [toolkit.get_validator('convert_from_extras'),
+                         toolkit.get_validator('ignore_missing'), ],
+        })
+        return schema
+
+    def is_fallback(self):
+        return True
+
+    def package_types(self):
+        return []
 
 
 class NHSEController(base.BaseController):
