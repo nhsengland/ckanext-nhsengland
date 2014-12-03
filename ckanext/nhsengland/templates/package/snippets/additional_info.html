@@ -11,20 +11,48 @@
       {% block package_additional_info %}
           <tr>
             <th scope="row" class="dataset-label">Title</th>
-            <td class="dataset-details" property="dc:title">{{ pkg.title or pkg.name }}</td>
+            <td class="dataset-details" property="dc:title">{{ pkg_dict.title or pkg_dict.name }}</td>
           </tr>
           <tr>
             <th scope="row" class="dataset-label">Description</th>
-            <td class="dataset-details" property="dc:description">{{ c.pkg_notes_formatted }}</td>
-          </tr>
-          <tr>
-            <th scope="row" class="dataset-label">URL</th>
-            <td class="dataset-details"></td>
+            <td class="dataset-details" property="dc:description">{{ pkg_dict.notes}}</td>
           </tr>
           <tr>
             <th scope="row" class="dataset-label">Tags</th>
-            <td class="dataset-details">{% for tag in tags %}{{ tag.display_name }}{% endfor %}
+            <td class="dataset-details">{% for tag in pkg_dict.tags %}{{ tag.name }}&nbsp;{% endfor %}
             </td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Coverage Start Date</th>
+            <td class="dataset-details">{{ pkg_dict.coverage_start_date }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Coverage End Date</th>
+            <td class="dataset-details">{{ pkg_dict.coverage_end_date }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Origin</th>
+            <td class="dataset-details">{{ pkg_dict.origin }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Frequency</th>
+            <td class="dataset-details">{{ pkg_dict.frequency[0] }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Homepage</th>
+            <td class="dataset-details">{{ pkg_dict.homepage }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">License</th>
+            <td class="dataset-details">{{ pkg_dict.license_title }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Publisher</th>
+            <td class="dataset-details">{{ pkg_dict.organization.title }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Visibility</th>
+            <td class="dataset-details">{% if pkg_dict.private %}PRIVATE{% else %}PUBLIC{% endif %}</td>
           </tr>
         {% if pkg_dict.url %}
           <tr>

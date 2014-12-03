@@ -10,11 +10,13 @@ def is_date(value):
     """
     Ensures that the passed in value is a valid date expressed as YYYY-MM-DD.
     """
-    try:
-        date = datetime.date(*time.strptime(value, '%Y-%m-%d')[:3])
-    except:
-        raise toolkit.Invalid("Not a valid date. Must be YYYY-MM-DD.")
-    return value
+    date = value.strip()
+    if date:
+        try:
+            checked_date = datetime.date(*time.strptime(date, '%Y-%m-%d')[:3])
+        except:
+            raise toolkit.Invalid("Not a valid date. Must be YYYY-MM-DD.")
+    return date
 
 
 def create_frequencies():
@@ -108,12 +110,12 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         Adds fields and validators to the schema.
         """
         schema.update({
-            'start_date': [toolkit.get_validator('ignore_missing'),
-                           is_date,
-                           toolkit.get_converter('convert_to_extras'), ],
-            'end_date': [toolkit.get_validator('ignore_missing'),
-                         is_date,
-                         toolkit.get_converter('convert_to_extras'), ],
+            'coverage_start_date': [toolkit.get_validator('ignore_missing'),
+                                    is_date,
+                                    toolkit.get_converter('convert_to_extras'), ],
+            'coverage_end_date': [toolkit.get_validator('ignore_missing'),
+                                  is_date,
+                                  toolkit.get_converter('convert_to_extras'), ],
             'origin': [toolkit.get_validator('ignore_missing'),
                        toolkit.get_converter('convert_to_extras'), ],
             'frequency': [toolkit.get_validator('ignore_missing'),
@@ -125,29 +127,29 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         return schema
 
     def create_package_schema(self):
-        schema = super(ExampleIDatasetFormPlugin, self).create_package_schema()
+        schema = super(NHSEnglandPlugin, self).create_package_schema()
         schema = self._modify_package_schema(schema)
         return schema
 
     def update_package_schema(self):
-        schema = super(ExampleIDatasetFormPlugin, self).update_package_schema()
+        schema = super(NHSEnglandPlugin, self).update_package_schema()
         schema = self._modify_package_schema(schema)
         return schema
 
     def show_package_schema(self):
-        schema = super(ExampleIDatasetFormPlugin, self).show_package_schema()
+        schema = super(NHSEnglandPlugin, self).show_package_schema()
         schema['tags']['__extras'].append(toolkit.get_converter('free_tags_only'))
         schema.update({
-            'start_date': [toolkit.get_converter('convert_from_extras'),
+            'coverage_start_date': [toolkit.get_converter('convert_from_extras'),
                            toolkit.get_validator('ignore_missing'), ],
-            'end_date': [toolkit.get_converter('convert_from_extras'),
+            'coverage_end_date': [toolkit.get_converter('convert_from_extras'),
                          toolkit.get_validator('ignore_missing'), ],
             'origin': [toolkit.get_converter('convert_from_extras'),
                        toolkit.get_validator('ignore_missing'), ],
-            'frequency': [toolkit.get_validator('convert_from_tags')
+            'frequency': [toolkit.get_converter('convert_from_tags')
                                                ('frequency'),
                           toolkit.get_validator('ignore_missing'), ],
-            'homepage': [toolkit.get_validator('convert_from_extras'),
+            'homepage': [toolkit.get_converter('convert_from_extras'),
                          toolkit.get_validator('ignore_missing'), ],
         })
         return schema
