@@ -6,6 +6,22 @@ import datetime
 import time
 
 
+def convert_to_extras(key, data, errors, context):
+    """
+    Rewrite of the same-named function in ckan.logic.converters that is
+    accurately wrong. I've submitted a bug/fix to CKAN so this function can
+    probably be removed at some later date, if/when the patch is merged.
+    """
+    # There is no tally for the number of fields converted to extras.
+    extras = [k for k in data.keys() if k[0] == 'extras' and len(k) > 1]
+    new_pos = 0
+    if extras:
+        extras.sort()
+        new_pos = extras[-1][-2] + 1  # e.g. ('extras', 5, 'value')
+    data[('extras', new_pos, 'key')] = key[-1]
+    data[('extras', new_pos, 'value')] = data[key]
+
+
 def is_date(value):
     """
     Ensures that the passed in value is a valid date expressed as YYYY-MM-DD.
@@ -112,17 +128,17 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         schema.update({
             'coverage_start_date': [toolkit.get_validator('ignore_missing'),
                                     is_date,
-                                    toolkit.get_converter('convert_to_extras'), ],
+                                    convert_to_extras, ],
             'coverage_end_date': [toolkit.get_validator('ignore_missing'),
                                   is_date,
-                                  toolkit.get_converter('convert_to_extras'), ],
+                                  convert_to_extras, ],
             'origin': [toolkit.get_validator('ignore_missing'),
-                       toolkit.get_converter('convert_to_extras'), ],
+                       convert_to_extras, ],
             'frequency': [toolkit.get_validator('ignore_missing'),
                           toolkit.get_converter('convert_to_tags')
                                                ('frequency'), ],
             'homepage': [toolkit.get_validator('ignore_missing'),
-                         toolkit.get_converter('convert_to_extras'), ],
+                         convert_to_extras, ],
         })
         return schema
 
