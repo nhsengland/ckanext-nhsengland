@@ -26,5 +26,8 @@ setup(
         [ckan.plugins]
         # Add plugins here, e.g.
         nhsengland_skin=ckanext.nhsengland.plugin:NHSEnglandPlugin
+
+        [paste.paster_command]
+        zap = ckanext.nhsengland.commands:ZapCommand
     ''',
 )
