@@ -1,6 +1,14 @@
-Some simple CSS updates to make a CKAN site look like it belongs to NHSEngland.
+CKANEXT-NHSEngland
+------------------
 
-Installation Instructions:
+A plugin that modifies a basic CKAN instance to fulfil the following:
+
+* Some simple CSS updates to make a CKAN site look like it belongs to NHSEngland.
+* Static pages required by NHSEngland.
+* Custom fields for metadata associated with datasets required by NHSEngland.
+
+Installation Instructions
+-------------------------
 
 * Activate the CKAN virtualenv
 * Clone the repository to /usr/lib/ckan/default/src

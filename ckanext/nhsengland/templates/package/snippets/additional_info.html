@@ -1,5 +1,5 @@
 <section class="additional-info" data-intro="This section contains key/value pairs used to annotate the dataset with arbitrary metadata." data-position="top">
-  <h3>{{ _('Additional Info') }}</h3>
+  <h2>{{ _('Metadata') }}</h2>
   <table class="table table-striped table-bordered table-condensed">
     <thead>
       <tr>
@@ -9,6 +9,51 @@
     </thead>
     <tbody>
       {% block package_additional_info %}
+          <tr>
+            <th scope="row" class="dataset-label">Title</th>
+            <td class="dataset-details" property="dc:title">{{ pkg_dict.title or pkg_dict.name }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Description</th>
+            <td class="dataset-details" property="dc:description">{{ pkg_dict.notes}}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Tags</th>
+            <td class="dataset-details">{% for tag in pkg_dict.tags %}{{ tag.name }}&nbsp;{% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Coverage Start Date</th>
+            <td class="dataset-details">{{ pkg_dict.coverage_start_date }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Coverage End Date</th>
+            <td class="dataset-details">{{ pkg_dict.coverage_end_date }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Origin</th>
+            <td class="dataset-details">{{ pkg_dict.origin }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Frequency</th>
+            <td class="dataset-details">{% if pkg_dict.frequency %}{{ pkg_dict.frequency[0] }}{% endif %}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Homepage</th>
+            <td class="dataset-details">{{ pkg_dict.homepage }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">License</th>
+            <td class="dataset-details">{{ pkg_dict.license_title }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Publisher</th>
+            <td class="dataset-details">{{ pkg_dict.organization.title }}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="dataset-label">Visibility</th>
+            <td class="dataset-details">{% if pkg_dict.private %}PRIVATE{% else %}PUBLIC{% endif %}</td>
+          </tr>
         {% if pkg_dict.url %}
           <tr>
             <th scope="row" class="dataset-label">{{ _('Source') }}</th>
@@ -16,27 +61,31 @@
           </tr>
         {% endif %}
 
-        {% if pkg_dict.author_email %}
-          <tr>
-            <th scope="row" class="dataset-label">{{ _("Author") }}</th>
-            <td class="dataset-details" property="dc:creator">{{ h.mail_to(email_address=pkg_dict.author_email, name=pkg_dict.author) }}</td>
-          </tr>
-        {% elif pkg_dict.author %}
+        {% if pkg_dict.author %}
           <tr>
             <th scope="row" class="dataset-label">{{ _("Author") }}</th>
             <td class="dataset-details" property="dc:creator">{{ pkg_dict.author }}</td>
           </tr>
         {% endif %}
 
-        {% if pkg_dict.maintainer_email %}
+        {% if pkg_dict.author_email %}
           <tr>
-            <th scope="row" class="dataset-label">{{ _('Maintainer') }}</th>
-            <td class="dataset-details" property="dc:contributor">{{ h.mail_to(email_address=pkg_dict.maintainer_email, name=pkg_dict.maintainer) }}</td>
+            <th scope="row" class="dataset-label">{{ _("Author Email") }}</th>
+            <td class="dataset-details" property="dc:creator">{{ h.mail_to(email_address=pkg_dict.author_email, name=pkg_dict.author) }}</td>
           </tr>
-        {% elif pkg_dict.maintainer %}
+        {% endif %}
+
+        {% if pkg_dict.maintainer %}
           <tr>
             <th scope="row" class="dataset-label">{{ _('Maintainer') }}</th>
             <td class="dataset-details" property="dc:contributor">{{ pkg_dict.maintainer }}</td>
+          </tr>
+        {% endif %}
+
+        {% if pkg_dict.maintainer_email %}
+          <tr>
+            <th scope="row" class="dataset-label">{{ _('Maintainer Email') }}</th>
+            <td class="dataset-details" property="dc:contributor">{{ h.mail_to(email_address=pkg_dict.maintainer_email, name=pkg_dict.maintainer) }}</td>
           </tr>
         {% endif %}
 

@@ -24,6 +24,37 @@
   {{ form.input('tag_string', id='field-tags', label=_('Tags'), placeholder=_('eg. economy, mental health, government'), value=data.tag_string, error=errors.tags, classes=['control-full'], attrs=tag_attrs) }}
 {% endblock %}
 
+{% block package_basic_fields_start_date %}
+    {{ form.input('coverage_start_date', label=_('Coverage Start'), id='field-coverage_start_date', placeholder=_('YYYY-MM-DD'), value=data.coverage_start_date, error=errors.coverage_start_date, classes=['control-medium']) }}
+{% endblock %}
+
+{% block package_basic_fields_end_date %}
+    {{ form.input('coverage_end_date', label=_('Coverage End'), id='field-coverage_end_date', placeholder=_('YYYY-MM-DD'), value=data.coverage_end_date, error=errors.coverage_end_date, classes=['control-medium']) }}
+{% endblock %}
+
+{% block package_basic_fields_origin %}
+    {{ form.input('origin', label=_('Origin'), id='field-origin', placeholder=_('Some organization'), value=data.origin, error=errors.origin, classes=['control-medium']) }}
+{% endblock %}
+
+
+{% block package_basic_fields_frequency %}
+<div class="control-group">
+    <label class="control-label" for="field-frequency">{{ _("Frequency") }}</label>
+    <div class="controls">
+      <select id="field-frequency" name="frequency" data-module="autocomplete">
+          <option value="" selected="selected"></option>
+        {% for freq in h.frequencies()  %}
+          <option value="{{ freq }}" {% if freq in data.get('frequency', []) %}selected="selected"{% endif %}>{{ freq }}</option>
+        {% endfor %}
+      </select>
+    </div>
+</div>
+{% endblock %}
+
+{% block package_basic_fields_homepage %}
+    {{ form.input('homepage', label=_('Homepage'), id='field-homepage', placeholder=_('http://example.com/dataset.html'), value=data.homepage, error=errors.homepage, classes=['control-medium']) }}
+{% endblock %}
+
 {% block package_basic_fields_license %}
 <div class="control-group">
   {% set error = errors.license_id %}
