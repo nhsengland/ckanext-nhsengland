@@ -21,7 +21,7 @@ Example:
       <ul class="resource-list">
 
           {% for resource in documentation %}
-            {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, is_documentation=True %}
+            {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource %}
           {% endfor %}
       </ul>
     {% else %}
@@ -41,7 +41,7 @@ Example:
       <ul class="resource-list">
 
           {% for resource in data %}
-            {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource, is_documentation=False %}
+            {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource %}
           {% endfor %}
 
       </ul>
