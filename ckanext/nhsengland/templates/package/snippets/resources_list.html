@@ -1,4 +1,4 @@
-{# 
+{#
 Renders a list of resources with icons and view links.
 
 resources - A list of resources to render
@@ -9,16 +9,41 @@ Example:
   {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources %}
 
 #}
-<section id="dataset-resources" class="resources" data-intro="Raw sources of data relating to this dataset are listed here. Click the 'Explore' button[s] to drill down." data-position="top">
-  <h3>{{ _('Data and Resources') }}</h3>
-  {% block resource_list %}
-    {% if resources %}
+
+{% block resource_list %}
+
+{% set documentation,data = h.split_resources(pkg) %}
+
+<section id="dataset-resources" class="resources" data-intro="Documentation relating to this dataset are listed here." data-position="top">
+  <h3>{{ _('Documentation') }}</h3>
+
+    {% if documentation %}
       <ul class="resource-list">
-        {% block resource_list_inner %}
-          {% for resource in resources %}
+
+          {% for resource in documentation %}
             {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource %}
           {% endfor %}
-        {% endblock %}
+      </ul>
+    {% else %}
+      <p>
+        {% trans url=h.url_for(controller='package', action='new_resource', id=pkg.name) %}
+          <p class="empty">This dataset has no documentation, <a href="{{ url }}">why not add some?</a>
+        {% endtrans %}
+      </p>
+
+    {% endif %}
+</section>
+
+<section id="dataset-resources" class="resources" data-intro="Raw sources of data relating to this dataset are listed here. Click the 'Explore' button[s] to drill down." data-position="top">
+  <h3>{{ _('Data') }}</h3>
+
+    {% if data %}
+      <ul class="resource-list">
+
+          {% for resource in data %}
+            {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource %}
+          {% endfor %}
+
       </ul>
     {% else %}
       <p>
@@ -28,5 +53,6 @@ Example:
         {% endtrans %}
       </p>
     {% endif %}
-    {% endblock %}
+
 </section>
+{% endblock %}
