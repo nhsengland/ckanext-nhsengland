@@ -8,7 +8,7 @@ def split_resources(pkg_dict):
     document_formats = ["DOC", "DOCX", "PDF"]
     documents, data = [], []
     for resource in pkg_dict["resources"]:
-        target = documents if resource.get("format", "") in document_formats \
+        target = documents if resource.get("format", "").upper() in document_formats \
                            else data
         target.append(resource)
     return documents, data
