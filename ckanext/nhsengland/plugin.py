@@ -119,8 +119,8 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         """
         with routes.mapper.SubMapper(route_map,
             controller='ckanext.nhsengland.plugin:NHSEController') as m:
+            m.connect('dashboard', '/dash', action='dashboard')
             m.connect('howto', '/howto', action='howto')
-            m.connect('dashboard', '/dashboard', action='dashboard')
         return route_map
 
     def after_map(self, route_map):
