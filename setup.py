@@ -20,7 +20,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        # -*- Extra requirements: -*-
+        "pylibmc==1.4.1"
     ],
     entry_points='''
         [ckan.plugins]
