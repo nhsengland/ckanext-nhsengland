@@ -20,7 +20,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        # -*- Extra requirements: -*-
+        "ckanapi==3.3"
     ],
     entry_points='''
         [ckan.plugins]
@@ -29,5 +29,6 @@ setup(
 
         [paste.paster_command]
         zap = ckanext.nhsengland.commands:ZapCommand
+        force-datastore = ckanext.nhsengland.commands:ForceDatastoreCommand
     ''',
 )
