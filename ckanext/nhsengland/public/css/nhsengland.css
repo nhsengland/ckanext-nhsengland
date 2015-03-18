@@ -240,16 +240,52 @@ footer ul.nav li {
     font-size: 30px;
 }
 
+.homepage .module-search {
+    height: 321px;
+    width: 940px;
+    background: url('/images/nhsengland_hero.jpg') no-repeat;
+    background-position: left top;
+    padding: 0px !important;
+    margin: 0px;
+    border: 0px;
+}
+
+.homepage .hero {
+    padding: 0;
+    margin-top: -13px;
+    z-index: -1;
+}
+
 .homepage .module-search .module-content {
-    background-color: #0091c9;
+    background-color: transparent;
+}
+
+.homepage .module-search .module-content .search-input{
+    width: 60%;
+    margin: 0 auto;
 }
 
 .homepage .module-search .module-content .heading {
     color: #FFF;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 32px 0 32px 0;
 }
 
 .homepage .module-search .tags {
-    background-color: #003893;
+    background-color: transparent;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.homepage .module-search .tags .tag {
+    background-color: #0072c6;
+    color: white;
+    border: 0;
+    box-shadow: None;
+    -moz-box-shadow: None;
+    -webkit-box-shadow: None;
 }
 
 .homepage .module-search .tags h3 {
