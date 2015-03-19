@@ -250,18 +250,47 @@ footer ul.nav li {
     border: 0px;
 }
 
+.homepage .stats {
+    text-align: center;
+    width: 100%;
+}
+
+.homepage .stats ul li {
+    width: 33%;
+}
+
 .homepage .hero {
     padding: 0;
     margin-top: -13px;
-    z-index: -1;
 }
 
 .homepage .module-search .module-content {
     background-color: transparent;
 }
 
+.homepage .module-search .search-form .search-input input {
+    width: 580px;
+}
+
+.homepage .module-search .search-form .search-input button {
+    background-color: #0072c6;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    padding: 4px;
+    height: 52px;
+    margin-top: -26px;
+    width: 104px;
+}
+
+.homepage .module-search .search-form .search-input button span {
+    display: inline;
+    font-size: 16px;
+    line-height: 30px;
+}
+
 .homepage .module-search .module-content .search-input{
-    width: 60%;
+    width: 700px;
     margin: 0 auto;
 }
 
@@ -368,4 +397,20 @@ h1, h2, h3 {color:#0072c6;}
 /* Well - except for these, which are different :( */
 .account-masthead .nav a:hover {
     color: white;
+}
+
+/* and these ... */
+
+.homepage .featured-dataset {
+    margin-bottom: 48px;
+}
+
+.homepage .featured-dataset span {
+    color: grey;
+    font-size: 80%;
+}
+
+.homepage .featured-dataset h1 {
+    font-size: 18px;
+    margin-top: 0;
 }
