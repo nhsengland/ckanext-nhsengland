@@ -352,17 +352,18 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
 }
 
 .beta-banner {
-    margin: 0;
-    padding: 6px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f8f0f0;
-    border-bottom: 1px solid #c6898b;
-    color: #b55457;
-    text-align: center;
-    z-index: 999999;
+    display: none;
+    /* margin: 0; */
+    /* padding: 6px; */
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 100%; */
+    /* background-color: #f8f0f0; */
+    /* border-bottom: 1px solid #c6898b; */
+    /* color: #b55457; */
+    /* text-align: center; */
+    /* z-index: 999999; */
 }
 
 .beta-banner a {
