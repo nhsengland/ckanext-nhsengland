@@ -435,3 +435,7 @@ h1, h2, h3 {color:#0072c6;}
     font-size: 18px;
     margin-top: 0;
 }
+
+.featured-publishers li:hover a {
+    color: white;
+}
