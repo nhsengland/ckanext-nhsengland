@@ -82,7 +82,7 @@
           </h2>
           <nav>
             <ul class="unstyled nav nav-simple">
-              {% for org in 'hscic nhs-england ons phe hqip'.split() %}
+              {% for org in 'hscic nhs-england ons phe'.split() %}
               <li class="nav-item">
                 <a href="/organization/{{ org }}" title="">
                   {{ h.get_organization(org=org)['display_name'] }}
