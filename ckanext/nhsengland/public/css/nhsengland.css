@@ -436,6 +436,12 @@ h1, h2, h3 {color:#0072c6;}
     margin-top: 0;
 }
 
+.featured-publishers li {
+    padding-left: 16px;
+    padding-top: 12px;
+    padding-bottom: 13px
+}
+
 .featured-publishers li:hover a {
     color: white;
 }
