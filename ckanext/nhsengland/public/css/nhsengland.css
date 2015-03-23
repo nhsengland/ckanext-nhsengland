@@ -240,87 +240,6 @@ footer ul.nav li {
     font-size: 30px;
 }
 
-.homepage .module-search {
-    height: 321px;
-    width: 940px;
-    background: url('/images/nhsengland_hero.jpg') no-repeat;
-    background-position: left top;
-    padding: 0px !important;
-    margin: 0px;
-    border: 0px;
-}
-
-.homepage .stats {
-    text-align: center;
-    width: 100%;
-}
-
-.homepage .stats ul li {
-    width: 33%;
-}
-
-.homepage .hero {
-    padding: 0;
-    margin-top: -13px;
-}
-
-.homepage .module-search .module-content {
-    background-color: transparent;
-}
-
-.homepage .module-search .search-form .search-input input {
-    width: 580px;
-}
-
-.homepage .module-search .search-form .search-input button {
-    background-color: #0072c6;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    padding: 4px;
-    height: 52px;
-    margin-top: -26px;
-    width: 104px;
-}
-
-.homepage .module-search .search-form .search-input button span {
-    display: inline;
-    font-size: 16px;
-    line-height: 30px;
-}
-
-.homepage .module-search .module-content .search-input{
-    width: 700px;
-    margin: 0 auto;
-}
-
-.homepage .module-search .module-content .heading {
-    color: #FFF;
-    text-align: center;
-    width: 50%;
-    margin: 0 auto;
-    padding: 32px 0 32px 0;
-}
-
-.homepage .module-search .tags {
-    background-color: transparent;
-    width: 40%;
-    margin: 0 auto;
-}
-
-.homepage .module-search .tags .tag {
-    background-color: #0072c6;
-    color: white;
-    border: 0;
-    box-shadow: None;
-    -moz-box-shadow: None;
-    -webkit-box-shadow: None;
-}
-
-.homepage .module-search .tags h3 {
-    color: #FFF;
-}
-
 a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
     z-index: 2;
 }
@@ -387,7 +306,6 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
 }
 
 
-
 /* These next four rules come straight from the branding guidelines */
 /* Let's try to make sure they stay here! */
 body {font-family: Arial, Helvetica, sans-serif; color: #000000;}  
@@ -400,7 +318,109 @@ h1, h2, h3 {color:#0072c6;}
     color: white;
 }
 
-/* and these ... */
+/* 
+ * 
+ * Begin custom styling for specific pages.
+ * 
+ */
+
+/*
+ * 
+ * Homepage 
+ * 
+ */
+
+.homepage .module-search {
+    height: 321px;
+    width: 940px;
+    background: url('/images/nhsengland_hero.jpg') no-repeat;
+    background-position: left top;
+    padding: 0px !important;
+    margin: 0px;
+    border: 0px;
+}
+
+.homepage .stats {
+    text-align: center;
+    width: 100%;
+}
+
+.homepage .stats ul li {
+    width: 33%;
+}
+
+.homepage .hero {
+    padding: 0;
+    margin-top: -13px;
+}
+
+
+.homepage .module-search .module-content {
+    background-color: transparent;
+}
+
+.homepage .module-search .search-form .search-input input {
+    width: 580px;
+}
+
+.homepage .module-search .search-form .search-input button {
+    background-color: #0072c6;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    padding: 4px;
+    height: 52px;
+    margin-top: -26px;
+    width: 104px;
+}
+
+.homepage .module-search .search-form .search-input button span {
+    display: inline;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.homepage .module-search .module-content .search-input{
+    width: 700px;
+    margin: 0 auto;
+}
+
+.homepage .module-search .module-content .heading {
+    color: #FFF;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 32px 0 32px 0;
+}
+
+.homepage .module-search .tags {
+    background-color: transparent;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.homepage .module-search .tags .tag {
+    background-color: #0072c6;
+    color: white;
+    border: 0;
+    box-shadow: None;
+    -moz-box-shadow: None;
+    -webkit-box-shadow: None;
+}
+
+.homepage .module-search .tags h3 {
+    color: #FFF;
+}
+
+.homepage .our-featured-datasets .col{
+    float: left;
+    width: 30%;
+    margin-left: 5%;
+}
+
+.homepage .our-featured-datasets .col.first {
+    margin-left: 0%;
+}
 
 .homepage .featured-dataset {
     margin-bottom: 48px;
