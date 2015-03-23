@@ -7,6 +7,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color: #0072c6;
     font-weight: lighter;
+    font-family: FrutigerLight, Arial, sans-serif;
 }
 
 a {
@@ -126,7 +127,6 @@ a {
 }
 
 .header-strapline h2 {
-    font-family: FrutigerLight, Arial, sans-serif;
     color: black;    
     font-size: 30px;
     line-height: 1.2;
