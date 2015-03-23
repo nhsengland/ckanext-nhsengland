@@ -76,7 +76,29 @@
         </div> <!-- .our-featured-datasets -->
       </div>
       <div class="span3 col1">
-        {% snippet 'home/snippets/featured_organization.html' %}
+        <section class="module module-narrow module-shallow">
+          <h2 class="module-heading">
+            Publishers
+          </h2>
+          <nav>
+            <ul class="unstyled nav nav-simple">
+              {% for org in 'hscic nhs-england ons phe hqip'.split() %}
+              <li class="nav-item">
+                <a href="/organization/{{ org }}" title="">
+                  {{ h.get_organization(org=org)['display_name'] }}
+                </a>
+              </li>
+              {% endfor %}
+              <li class="nav-item">
+                <a href="/organization" title="">
+                  <b>See all publishers</b>
+                </a>
+              </li>
+              
+            </ul>
+          </nav>
+
+        </section>
       </div>
     </div>
     <div class="row row2">
