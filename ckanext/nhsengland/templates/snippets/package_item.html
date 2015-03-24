@@ -43,14 +43,15 @@ Example:
         <div>{{ notes|urlize }}</div>
       {% endif %}
     </div>
+    {% if h.dict_list_reduce(package.resources, 'format') or (package.coverage_start_date and package.coverage_end_date) %}
     <div class="dataset-resource-container">
     {% if package.coverage_start_date and package.coverage_end_date %}
       <span class="coverage">
         Coverage: <strong>{{ package.coverage_start_date }} - {{ package.coverage_end_date }}</strong>
       </span>
     {% endif %}
-    {% if package.resources and not hide_resources %}
-      Formats: 
+    {% if h.dict_list_reduce(package.resources, 'format') %}
+      Formats:
       <ul class="dataset-resources unstyled">
         {% for resource in h.dict_list_reduce(package.resources, 'format') %}
           <li>
@@ -60,5 +61,6 @@ Example:
       </ul>
     {% endif %}
     </div>
+    {% endif %}
   {% endblock %}
 </li>
