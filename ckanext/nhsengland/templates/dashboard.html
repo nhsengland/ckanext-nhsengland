@@ -4,16 +4,20 @@
         <meta charset="utf-8">
         <title>NHS England Dashboard</title>
 
-        <link rel="stylesheet" href="/dashboard/styles/57d15f79.main.css">
+        <link rel="/dashboard/stylesheet" href="/dashboard/styles/e9c79ba9.main.css">
 </head>
     <body>
         <script src="/dashboard/scripts/3380c7c4.components.js"></script>
 
-        <script src="/dashboard/scripts/e2d3f575.templates.js"></script>
+        <script type="text/javascript">
+        	var isLoggedIn = {% if c.userobj %}true{% else %}false{% endif %};
+        </script>
+        
+        <script src="/dashboard/scripts/6001c053.templates.js"></script>
 
-        <script src="/dashboard/scripts/dc5c156e.main.js"></script>
+        <script src="/dashboard/scripts/6cbd0084.main.js"></script>
 
-        <script src="/dashboard/scripts/585f8e08.utils.js"></script>
+        <script src="/dashboard/scripts/b94b9bb1.utils.js"></script>
 
         <script src="/dashboard/scripts/95176894.dashboard.js"></script>
         
