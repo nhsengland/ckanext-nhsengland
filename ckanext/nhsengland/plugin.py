@@ -119,7 +119,7 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         """
         with routes.mapper.SubMapper(route_map,
             controller='ckanext.nhsengland.plugin:NHSEController') as m:
-            m.connect('dashboard', '/dash', action='dashboard')
+            m.connect('boardreport', '/boardreport', action='boardreport')
             m.connect('howto', '/howto', action='howto')
         return route_map
 
@@ -192,5 +192,5 @@ class NHSEController(base.BaseController):
     def howto(self):
         return base.render('howto.html')
         
-    def dashboard(self):
+    def boardreport(self):
         return base.render('dashboard.html')
