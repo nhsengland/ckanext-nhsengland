@@ -4,8 +4,9 @@
 import logging
 import sys
 
+from ckan.logic import NotFound
 from ckan.lib.cli import CkanCommand
-
+from ckanapi import LocalCKAN
 
 class ZapCommand(CkanCommand):
     """
@@ -42,3 +43,63 @@ class ZapCommand(CkanCommand):
 
         group.purge()
         model.Session.commit()
+
+
+class ForceDatastoreCommand(CkanCommand):
+    """
+    Forces the reloading of datastore tables.
+
+    This is for either all resources, or a single resource whose
+    id is specified as an argument
+    """
+    summary = "Forces the reloading of datastore tables."
+    usage = __doc__
+    max_args = 1
+    min_args = 0
+
+    def __init__(self, name):
+        super(ForceDatastoreCommand, self).__init__(name)
+
+    def command(self):
+        self._load_config()
+
+        import ckan.model as model
+        model.Session.remove()
+        model.Session.configure(bind=model.meta.engine)
+
+        self.ckan = LocalCKAN()
+
+        if len(self.args) == 1:
+            self.force_resource(self.args[0])
+            return
+
+        # Going to re-process everything - this may:
+        #   1. Take some time
+        #   2. Put some pressure on the queue
+        resources = model.Session.query(model.Resource).all()
+        for resource in resources:
+            self.force_resource(resource.id)
+
+
+    def force_resource(self, id):
+        """
+        Forces a single resource to delete the datastore table and
+        reload the data from the resource url.
+        """
+        import ckan.model as model
+
+        resource = model.Resource.get(id)
+        if not resource:
+            print "Could not find resource {}".format(id)
+            return
+
+        print "Processing resource '{}' [{}]".format(resource.name, id)
+
+        try:
+            self.ckan.action.datastore_delete(resource_id=id, force=True)
+            print " + Datastore table deleted"
+        except NotFound:
+            print " - No datastore table found"
+
+        success = self.ckan.action.datapusher_submit(resource_id=id, ignore_hash=True)
+        print " + Job submitted to datapusher: {}".format(success)
