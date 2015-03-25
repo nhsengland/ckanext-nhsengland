@@ -193,4 +193,4 @@ class NHSEController(base.BaseController):
         return base.render('howto.html')
         
     def boardreport(self):
-        return base.render('dashboard.html')
+        return base.render('boardreport.html')
