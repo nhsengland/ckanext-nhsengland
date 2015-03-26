@@ -24,7 +24,6 @@
   {{ h.build_nav_icon('dataset_read', _('Dataset'), id=pkg.name) }}
   {{ h.build_nav_icon('dataset_groups', _('Groups'), id=pkg.name) }}
   {{ h.build_nav_icon('dataset_activity', _('Activity Stream'), id=pkg.name) }}
-  {{ h.build_nav_icon('related_list', _('Related'), id=pkg.name) }}
   <li><a href="javascript:void(0)" onClick="javascript:introJs().goToStep(8).start()"><i class="icon-question"></i>Help</a></li>
 {% endblock %}
 
@@ -51,10 +50,6 @@
 
   {% block secondary_help_content %}{% endblock %}
 
-  {% block package_info %}
-    {% snippet 'package/snippets/info.html', pkg=pkg %}
-  {% endblock %}
-
   {% block package_organization %}
     {% if pkg.organization %}
       {% set org = h.get_organization(pkg.organization.name) %}
@@ -62,8 +57,8 @@
     {% endif %}
   {% endblock %}
 
-  {% block package_social %}
-    {% snippet "snippets/social.html" %}
+  {% block package_info %}
+    {% snippet 'package/snippets/info.html', pkg=pkg %}
   {% endblock %}
 
   {% block package_license %}

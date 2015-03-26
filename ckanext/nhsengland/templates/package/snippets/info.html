@@ -9,22 +9,18 @@ Example:
 
 #}
 {% if pkg %}
+  {% if not hide_follow_button %}
   <section class="module module-narrow">
     <div class="module context-info">
+      <h2 class="module-heading"><i class="icon-building"></i> {{ _('Subscribe to updates') }}</h2>
       <div class="module-content">
-        <h1 class="heading">{{ pkg.title or pkg.name }}</h1>
-        <div class="nums">
-          <dl>
-            <dt>{{ _('Followers') }}</dt>
-            <dd>{{ h.SI_number_span(h.get_action('dataset_follower_count', {'id': pkg.id})) }}</dd>
-          </dl>
-        </div>
-        {% if not hide_follow_button %}
+        <p>Follow to <strong>receive an email</strong> when this dataset is
+        updated.</p>
           <div class="follow_button" data-intro="Follow this dataset to get notifications of updates. Switch on email notifications in your account settings." data-position="top">
             {{ h.follow_button('dataset', pkg.name) }}
           </div>
-        {% endif %}
       </div>
     </div>
   </section>
+  {% endif %}
 {% endif %}

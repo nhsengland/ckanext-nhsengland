@@ -465,3 +465,17 @@ h1, h2, h3 {color:#0072c6;}
 .dataset-resource-container .coverage {
     margin-right: 16px;
 }
+
+.additional-info table th {
+    text-align: right;
+    width: 25%;
+}
+
+.additional-info .api-call {
+    float: right;
+    padding-top: 8px;
+}
+
+th.dataset-label {
+    text-align: right;
+}
