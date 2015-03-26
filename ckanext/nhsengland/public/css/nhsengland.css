@@ -363,7 +363,12 @@ h1, h2, h3 {color:#0072c6;}
     width: 580px;
 }
 
-.homepage .module-search .search-form .search-input button {
+.search-form .search-input.search-giant input {
+    width: 580px;
+}
+
+.homepage .module-search .search-form .search-input button,
+.search-form .search-input.search-giant button {
     background-color: #0072c6;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     color: #ffffff;
@@ -374,7 +379,8 @@ h1, h2, h3 {color:#0072c6;}
     width: 104px;
 }
 
-.homepage .module-search .search-form .search-input button span {
+.homepage .module-search .search-form .search-input button span,
+.search-form .search-input.search-giant button span {
     display: inline;
     font-size: 16px;
     line-height: 30px;
@@ -444,4 +450,18 @@ h1, h2, h3 {color:#0072c6;}
 
 .featured-publishers li:hover a {
     color: white;
+}
+
+.dataset-resource-container {
+    background: #EEE;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.dataset-resource-container ul {
+    display: inline;
+}
+
+.dataset-resource-container .coverage {
+    margin-right: 16px;
 }
