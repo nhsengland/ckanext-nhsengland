@@ -11,39 +11,45 @@
         <div class="our-featured-datasets">
           <div class="col first">
             <div class="featured-dataset">
-              <span class="publisher">NHS England</span>
-              <h1 class="title">
-                A&E Attendances and Emergency Admissions - January 2015
-              </h1>
+              <span class="publisher">HSCIC</span>
+              <a href="/dataset/qof-national-quality-outcomes-framework-2013-14">
+                <h1 class="title">
+                  QOF - National Quality Outcomes Framework - 2013-14
+                </h1>
+              </a>
               <p class="blurb">
-                The Weekly A&amp;E Attendances and Emergency Admissions collection collects the 
-                total number of attendances in the week for all A&amp;E types 
+               Quality and Outcomes Framework (QOF) recorded prevalence, achievement and exceptions 
+               data 2013-14.
               </p>
-              <a href="#">View this dataset</a>
+              <a href="/dataset/qof-national-quality-outcomes-framework-2013-14">View this dataset</a>
             </div>
           </div>
           <div class="col">
             <div class="featured-dataset">
-              <span class="publisher">NHS England</span>
-              <h1 class="title">
-                Provider-based Cancer Waiting Times for Q3 2014-15
-              </h1>
+              <span class="publisher">ODS Service</span>
+              <a href="/dataset/ods-nhs-trusts-and-sites">
+                <h1 class="title">
+                  ODS - NHS Trusts and Sites
+                </h1>
+              </a>
               <p class="blurb">
-                The latest quarterly national statistics on waiting times for suspected and diagnosed cancer patients accessing NHS services
+                Current and closed NHS Trusts, including code, name, address, Health Authority code, and start and end dates.  
               </p>
-              <a href="#">View this dataset</a>
+              <a href="/dataset/ods-nhs-trusts-and-sites">View this dataset</a>
             </div>
           </div>
           <div class="col">
             <div class="featured-dataset">
               <span class="publisher">HSCIC</span>
-              <h1 class="title">
-                Population Estimates for High Level Areas<br><br>
-              </h1>
-              <p class="blurb">This dataset provides the mid-year population
-                estimates for the UK and its constituent countries and local
-                authorities</p>
-              <a href="#">View this dataset</a>
+              <a href="/dataset/nhsof-5-1-patient-safety-incidents">
+                <h1 class="title">
+                  NHSOF - 5.1 Patient safety incidents                  
+                </h1>
+              </a>
+              <p class="blurb">
+                For each of a CCG's five main providers, this indicator shows the rate of patient safety incidents per 1,000 total provider bed days
+              </p>
+              <a href="/dataset/nhsof-5-1-patient-safety-incidents">View this dataset</a>
             </div>
           </div>
         </div> <!-- .our-featured-datasets -->
@@ -55,7 +61,7 @@
           </h2>
           <nav>
             <ul class="unstyled nav nav-simple featured-publishers">
-              {% for org in 'hscic nhs-england ons phe'.split() %}
+              {% for org in 'hscic nhs-england ons'.split() %}
               <li>
                 <a href="/organization/{{ org }}" title="">
                   {{ h.get_organization(org=org)['display_name'] }}
@@ -89,8 +95,7 @@
               </a>
               <p class="blurb">
                 The Weekly A&amp;E Attendances and Emergency Admissions collection collects the 
-                total number of attendances in the week for all A&amp;E types 
-                
+                total number discharged, admitted or transferred within four hours of arrival.                
               </p>
               <a href="/group/a_and_e">View this collection</a>
             </div>
@@ -102,11 +107,12 @@
               </span>
               <a href="/group/cwt">
                 <h1 class="title">
-                  Cancer Waiting Times
+                  Cancer Waiting Times<br><br>
                 </h1>
               </a>
-              <p class="blurb">
-                National statistics on waiting times for suspected and diagnosed cancer patients accessing NHS services
+              <p class="blurb">                
+                National statistics 
+                on the waiting times of people referred by their GP with suspected cancer or breast symptoms and those subsequently diagnosed with and treated for cancer by the NHS.
               </p>
               <a href="/group/cwt">View this collection</a>
             </div>
@@ -117,7 +123,7 @@
                 {{ h.get_collection('nhsof')['package_count'] }} datasets
               </span>
               <a href="/group/nhsof">
-                <h1 class="title">NHS Outcomes Framework<br><br></h1>
+                <h1 class="title">NHS Outcomes Framework</h1>
               </a>
               <p class="blurb">
                 The NHS Outcomes Framework indicators form part of the NHS Outcomes Framework. These indicators have been designed to provide national-level accountability
