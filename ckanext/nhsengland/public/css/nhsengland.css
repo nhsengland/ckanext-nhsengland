@@ -444,3 +444,7 @@ h1, h2, h3 {color:#0072c6;}
     float: right;
     padding-top: 8px;
 }
+
+th.dataset-label {
+    text-align: right;
+}
