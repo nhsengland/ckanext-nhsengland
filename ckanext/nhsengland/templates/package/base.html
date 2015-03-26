@@ -22,3 +22,43 @@
     <li class="active"><a href="">{{ _('Create Dataset') }}</a></li>
   {% endif %}
 {% endblock %}
+
+{% block primary_content %}
+    <article class="module">
+    {% if pkg.private %}
+      <span class="dataset-private label label-inverse pull-right" data-intro="this dataset is only visible to people in the organization that owns it." data-position="top">
+        <i class="icon-lock"></i>
+        {{ _('Private') }}
+      </span>
+    {% endif %}
+    <h1 data-intro="The name of the dataset." data-position="top">
+      {% block page_heading %}
+        {{ pkg.title or pkg.name }}
+        {% if pkg.state.startswith('draft') %}
+          [{{ _('Draft') }}]
+        {% endif %}
+      {% endblock %}
+    </h1>
+    {% block page_header %}
+                      <header class="module-content page-header">
+                        {% if self.content_action() | trim %}
+                          <div class="content_action" data-intro="Update and manage this dataset." data-position="top">
+                            {% block content_action %}{% endblock %}
+                          </div>
+                        {% endif %}
+                        <ul class="nav nav-tabs" data-intro="Different aspects of the dataset." data-position="top">
+                          {% block content_primary_nav %}{% endblock %}
+                        </ul>
+                      </header>
+    {% endblock %}
+    <div class="module-content">
+    {% if self.page_primary_action() | trim %}
+        <div class="page_primary_action">
+        {% block page_primary_action %}{% endblock %}
+        </div>
+    {% endif %}
+        {% block primary_content_inner %}
+    {% endblock %}
+    </div>
+    </article>
+{% endblock %}

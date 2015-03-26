@@ -67,15 +67,13 @@
 			    {% snippet 'snippets/home_breadcrumb_item.html' %}
 			    {% block breadcrumb_content %}{% endblock %}
 			  </ol>
-			{% endif %}
-	              {% endblock %}
+                {% endif %}
+	          {% endblock %}
 		    </div>
-		  {% endblock %}
+		    {% endblock %}
 
                 {% block primary_content %}
                   <article class="module">
-
-
                     {% block page_header %}
                       <header class="module-content page-header">
                         {% if self.content_action() | trim %}
