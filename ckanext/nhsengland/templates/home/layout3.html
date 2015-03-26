@@ -30,7 +30,7 @@
               </h1>
               <p class="blurb">
                 The latest quarterly national statistics on waiting times for suspected and diagnosed cancer patients accessing NHS services
-                </p>
+              </p>
               <a href="#">View this dataset</a>
             </div>
           </div>
@@ -73,42 +73,56 @@
 
         </section>
       </div>
+
       <div class="span9 col1">
         <h2>Featured Collections</h2>
         <div class="our-featured-datasets">
           <div class="col first">
             <div class="featured-dataset">
-              <span class="publisher">NHS England</span>
-              <h1 class="title">
-                A&E Attendances and Emergency Admissions
-              </h1>
+              <span class="publisher">
+                {{ h.get_collection('a_and_e')['package_count'] }} datasets
+              </span>
+              <a href="/group/a_and_e">
+                <h1 class="title">
+                  A&E Attendances and Emergency Admissions
+                </h1>
+              </a>
               <p class="blurb">
                 The Weekly A&amp;E Attendances and Emergency Admissions collection collects the 
                 total number of attendances in the week for all A&amp;E types 
                 
               </p>
-              <a href="#">View this collection</a>
+              <a href="/group/a_and_e">View this collection</a>
             </div>
           </div>
           <div class="col">
             <div class="featured-dataset">
-              <span class="publisher">NHS England</span>
-              <h1 class="title">
-                Provider-based Cancer Waiting Times
-              </h1>
+              <span class="publisher">
+                {{ h.get_collection('cwt')['package_count'] }} datasets
+              </span>
+              <a href="/group/cwt">
+                <h1 class="title">
+                  Cancer Waiting Times
+                </h1>
+              </a>
               <p class="blurb">
                 National statistics on waiting times for suspected and diagnosed cancer patients accessing NHS services
-                </p>
-              <a href="#">View this collection</a>
+              </p>
+              <a href="/group/cwt">View this collection</a>
             </div>
           </div>
           <div class="col">
             <div class="featured-dataset">
-              <span class="publisher">HSCIC</span>
-              <h1 class="title">Friends and Family Test<br><br></h1>
+              <span class="publisher">
+                {{ h.get_collection('nhsof')['package_count'] }} datasets
+              </span>
+              <a href="/group/nhsof">
+                <h1 class="title">NHS Outcomes Framework<br><br></h1>
+              </a>
               <p class="blurb">
-                The Friends and Family Test (FFT) is a single question survey which asks patients whether they would recommend the NHS service they have received to friends and family who need similar treatment or care.</p>
-              <a href="#">View this collection</a>
+                The NHS Outcomes Framework indicators form part of the NHS Outcomes Framework. These indicators have been designed to provide national-level accountability
+              </p>
+              <a href="/group/nhsof">View this collection</a>
             </div>
           </div>
         </div> <!-- .our-featured-datasets -->
