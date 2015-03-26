@@ -14,25 +14,18 @@ Example:
 
 {% set documentation,data = h.split_resources(pkg) %}
 
+{% if documentation %}
 <section id="dataset-resources" class="resources" data-intro="Documentation relating to this dataset are listed here." data-position="top">
   <h3>{{ _('Documentation') }}</h3>
 
-    {% if documentation %}
       <ul class="resource-list">
 
           {% for resource in documentation %}
             {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource %}
           {% endfor %}
       </ul>
-    {% else %}
-      <p>
-        {% trans url=h.url_for(controller='package', action='new_resource', id=pkg.name) %}
-          <p class="empty">This dataset has no documentation, <a href="{{ url }}">why not add some?</a>
-        {% endtrans %}
-      </p>
-
-    {% endif %}
 </section>
+{% endif %}
 
 <section id="dataset-resources" class="resources" data-intro="Raw sources of data relating to this dataset are listed here. Click the 'Explore' button[s] to drill down." data-position="top">
   <h3>{{ _('Data') }}</h3>

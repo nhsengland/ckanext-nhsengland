@@ -102,10 +102,11 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.ITemplateHelpers)
 
     def get_helpers(self):
-        from ckanext.nhsengland.helpers import split_resources
+        from ckanext.nhsengland.helpers import split_resources, get_collection
         return {
-            'frequencies': frequencies,
-            'split_resources': split_resources
+            'frequencies'    : frequencies,
+            'split_resources': split_resources,
+            'get_collection' : get_collection
         }
 
     def update_config(self, config):

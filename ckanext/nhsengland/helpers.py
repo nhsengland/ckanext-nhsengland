@@ -1,3 +1,4 @@
+import ckan.logic as logic
 
 
 def split_resources(pkg_dict):
@@ -12,3 +13,12 @@ def split_resources(pkg_dict):
                            else data
         target.append(resource)
     return documents, data
+
+
+def get_collection(name):
+    if name is None:
+        return {}
+    try:
+        return logic.get_action('group_show')({}, {'id': name})
+    except (logic.NotFound, logic.ValidationError, logic.NotAuthorized):
+        return {}
