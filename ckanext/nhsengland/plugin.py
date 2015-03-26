@@ -34,13 +34,6 @@ def is_date(value):
             raise toolkit.Invalid("Not a valid date. Must be YYYY-MM-DD.")
     return date
 
-def get_collection(name):
-    if name is None:
-        return {}
-    try:
-        return logic.get_action('group_show')({}, {'id': name})
-    except (NotFound, ValidationError, NotAuthorized):
-        return {}
 
 def create_frequencies():
     """
@@ -109,7 +102,7 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.ITemplateHelpers)
 
     def get_helpers(self):
-        from ckanext.nhsengland.helpers import split_resources
+        from ckanext.nhsengland.helpers import split_resources, get_collection
         return {
             'frequencies'    : frequencies,
             'split_resources': split_resources,
