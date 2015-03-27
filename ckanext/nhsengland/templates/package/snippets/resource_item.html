@@ -17,15 +17,8 @@
   {% block resource_item_explore %}
   {% if not url_is_edit %}
   <div class="dropdown btn-group">
-    <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-      <i class="icon-share-alt"></i>
-      {{ _('Explore') }}
-      <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      {% block resource_item_explore_links %}
-      <li>
-        <a href="{{ url }}">
+
+        <a href="{{ url }}" class="btn">
           {% if res.can_be_previewed %}
             <i class="icon-bar-chart"></i>
             {{ _('Preview') }}
@@ -34,9 +27,8 @@
             {{ _('More information') }}
           {% endif %}
         </a>
-      </li>
-      <li>
-        <a href="{{ res.url }}" class="resource-url-analytics" target="_blank">
+
+        <a href="{{ res.url }}" class="btn" target="_blank">
           {% if res.can_be_previewed %}
             <i class="icon-download"></i>
             {{ _('Download') }}
@@ -45,17 +37,12 @@
             {{ _('Go to resource') }}
           {% endif %}
         </a>
-      </li>
       {% if can_edit %}
-      <li>
-        <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=res.id) }}">
+        <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=res.id) }}" class="btn">
           <i class="icon-edit"></i>
           {{ _('Edit') }}
         </a>
-      </li>
       {% endif %}
-      {% endblock %}
-    </ul>
   </div>
   {% endif %}
   {% endblock %}

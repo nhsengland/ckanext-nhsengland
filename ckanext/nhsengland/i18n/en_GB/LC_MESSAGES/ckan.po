@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: CKAN\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-12-13 11:40+0000\n"
-"PO-Revision-Date: 2014-08-15 10:04-0000\n"
+"PO-Revision-Date: 2015-03-26 12:52-0000\n"
 "Last-Translator: David Miller <david@openhealthcare.org.uk>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/"
 "ckan/language/en_GB/)\n"
@@ -244,7 +244,7 @@ msgstr "Request params must be in form of a json encoded dictionary."
 #: ckan/controllers/group.py:776 ckan/controllers/group.py:858
 #: ckan/controllers/package.py:1327 ckan/controllers/package.py:1338
 msgid "Group not found"
-msgstr "Group not found"
+msgstr "Collection not found"
 
 #: ckan/controllers/feed.py:285 ckan/controllers/feed.py:287
 #: ckan/controllers/feed.py:437 ckan/controllers/feed.py:439
@@ -253,14 +253,14 @@ msgstr "\"page\" parameter must be a positive integer"
 
 #: ckan/controllers/group.py:172
 msgid "Incorrect group type"
-msgstr ""
+msgstr "Incorrect collection type"
 
 #: ckan/controllers/group.py:192 ckan/controllers/group.py:387
 #: ckan/controllers/group.py:474 ckan/controllers/group.py:515
 #: ckan/controllers/group.py:547 ckan/controllers/group.py:860
 #, python-format
 msgid "Unauthorized to read group %s"
-msgstr "Unauthorized to read group %s"
+msgstr "Unauthorized to read collection %s"
 
 #: ckan/controllers/group.py:289 ckan/controllers/home.py:70
 #: ckan/controllers/package.py:225 ckan/lib/helpers.py:601
@@ -292,7 +292,7 @@ msgstr "Publishers"
 #: ckan/templates_legacy/package/search.html:26
 #: ckan/templates_legacy/revision/read.html:64
 msgid "Groups"
-msgstr "Groups"
+msgstr "Collections"
 
 #: ckan/controllers/group.py:291 ckan/controllers/home.py:72
 #: ckan/controllers/package.py:227 ckan/lib/helpers.py:603
@@ -330,7 +330,7 @@ msgstr ""
 
 #: ckan/controllers/group.py:434
 msgid "Unauthorized to create a group"
-msgstr "Unauthorized to create a group"
+msgstr "Unauthorized to create a collection"
 
 #: ckan/controllers/group.py:483 ckan/controllers/package.py:320
 #: ckan/controllers/package.py:811
@@ -354,7 +354,7 @@ msgstr "User %r not authorised to edit %s authorisations"
 #: ckan/controllers/group.py:618 ckan/controllers/group.py:687
 #, python-format
 msgid "Unauthorized to delete group %s"
-msgstr "Unauthorized to delete group %s"
+msgstr "Unauthorized to delete collection %s"
 
 #: ckan/controllers/group.py:597
 msgid "Organization has been deleted."
@@ -362,21 +362,21 @@ msgstr "Publisher has been deleted."
 
 #: ckan/controllers/group.py:599
 msgid "Group has been deleted."
-msgstr "Group has been deleted."
+msgstr "Collection has been deleted."
 
 #: ckan/controllers/group.py:658
 #, python-format
 msgid "Unauthorized to add member to group %s"
-msgstr "Unauthorized to add member to group %s"
+msgstr "Unauthorized to add member to collection %s"
 
 #: ckan/controllers/group.py:675
 #, python-format
 msgid "Unauthorized to delete group %s members"
-msgstr "Unauthorized to delete group %s members"
+msgstr "Unauthorized to delete collection %s members"
 
 #: ckan/controllers/group.py:681
 msgid "Group member has been deleted."
-msgstr "Group member has been deleted."
+msgstr "Collection member has been deleted."
 
 #: ckan/controllers/group.py:703 ckan/controllers/package.py:423
 msgid "Select two revisions before doing the comparison."
@@ -389,11 +389,11 @@ msgstr "User %r not authorized to edit %r"
 
 #: ckan/controllers/group.py:729
 msgid "CKAN Group Revision History"
-msgstr "CKAN Group Revision History"
+msgstr "CKAN Collection Revision History"
 
 #: ckan/controllers/group.py:732
 msgid "Recent changes to CKAN Group: "
-msgstr "Recent changes to CKAN Group: "
+msgstr "Recent changes to CKAN Collection: "
 
 #: ckan/controllers/group.py:753 ckan/controllers/package.py:473
 msgid "Log message: "
@@ -401,22 +401,22 @@ msgstr "Log message: "
 
 #: ckan/controllers/group.py:779
 msgid "Unauthorized to read group {group_id}"
-msgstr "Unauthorized to read group {group_id}"
+msgstr "Unauthorized to read collection {group_id}"
 
 #: ckan/controllers/group.py:798 ckan/controllers/package.py:1255
 #: ckan/controllers/user.py:654
 msgid "You are now following {0}"
-msgstr "You are now following {0}"
+msgstr "You are now subscribed to {0}"
 
 #: ckan/controllers/group.py:817 ckan/controllers/package.py:1274
 #: ckan/controllers/user.py:674
 msgid "You are no longer following {0}"
-msgstr "You are no longer following {0}"
+msgstr "You are no longer subscribed to {0}"
 
 #: ckan/controllers/group.py:835 ckan/controllers/user.py:521
 #, python-format
 msgid "Unauthorized to view followers %s"
-msgstr "Unauthorized to view followers %s"
+msgstr "Unauthorized to view subscribers %s"
 
 #: ckan/controllers/home.py:37
 msgid "This site is currently off-line. Database is not initialised."
@@ -853,7 +853,7 @@ msgstr "{actor} added the tag {tag} to the dataset {dataset}"
 
 #: ckan/lib/activity_streams.py:67
 msgid "{actor} updated the group {group}"
-msgstr "{actor} updated the group {group}"
+msgstr "{actor} updated the collection {group}"
 
 #: ckan/lib/activity_streams.py:70
 msgid "{actor} updated the organization {organization}"
@@ -886,7 +886,7 @@ msgstr ""
 
 #: ckan/lib/activity_streams.py:92
 msgid "{actor} deleted the group {group}"
-msgstr "{actor} deleted the group {group}"
+msgstr "{actor} deleted the collection {group}"
 
 #: ckan/lib/activity_streams.py:95
 msgid "{actor} deleted the organization {organization}"
@@ -906,7 +906,7 @@ msgstr "{actor} deleted the resource {resource} from the dataset {dataset}"
 
 #: ckan/lib/activity_streams.py:108
 msgid "{actor} created the group {group}"
-msgstr "{actor} created the group {group}"
+msgstr "{actor} created the collection {group}"
 
 #: ckan/lib/activity_streams.py:111
 msgid "{actor} created the organization {organization}"
@@ -938,15 +938,15 @@ msgstr "{actor} deleted the related item {related_item}"
 
 #: ckan/lib/activity_streams.py:132
 msgid "{actor} started following {dataset}"
-msgstr "{actor} started following {dataset}"
+msgstr "{actor} subscribed to {dataset}"
 
 #: ckan/lib/activity_streams.py:135
 msgid "{actor} started following {user}"
-msgstr "{actor} started following {user}"
+msgstr "{actor} subscribed to {user}"
 
 #: ckan/lib/activity_streams.py:138
 msgid "{actor} started following {group}"
-msgstr "{actor} started following {group}"
+msgstr "{actor} subscribed to {group}"
 
 #: ckan/lib/activity_streams.py:142
 msgid ""
@@ -1297,7 +1297,7 @@ msgstr "Dataset"
 #: ckanext/stats/templates/ckanext/stats/index.html:113
 #: ckanext/stats/templates_legacy/ckanext/stats/index.html:82
 msgid "Group"
-msgstr "Group"
+msgstr "Collection"
 
 #: ckan/logic/converters.py:181
 msgid "Could not parse as valid JSON"
@@ -1343,7 +1343,7 @@ msgstr "Related"
 
 #: ckan/logic/validators.py:216
 msgid "That group name or ID does not exist."
-msgstr "That group name or ID does not exist."
+msgstr "That collection name or ID does not exist."
 
 #: ckan/logic/validators.py:230
 msgid "Activity type"
@@ -1406,7 +1406,7 @@ msgstr "Duplicate key \"%s\""
 
 #: ckan/logic/validators.py:389
 msgid "Group name already exists in database"
-msgstr "Group name already exists in database"
+msgstr "Collection name already exists in database"
 
 #: ckan/logic/validators.py:395
 #, python-format
@@ -1528,7 +1528,7 @@ msgstr "REST API: Create member object %s"
 
 #: ckan/logic/action/create.py:667
 msgid "Trying to create an organization as a group"
-msgstr "Trying to create a publisher as a group"
+msgstr "Trying to create a publisher as a collection"
 
 #: ckan/logic/action/create.py:751
 msgid "You must supply a package id or name (parameter \"package\")."
@@ -1549,20 +1549,20 @@ msgstr "Rating must be between %i and %i."
 
 #: ckan/logic/action/create.py:1105 ckan/logic/action/create.py:1112
 msgid "You must be logged in to follow users"
-msgstr "You must be logged in to follow users"
+msgstr "You must be logged in to subscribe to users"
 
 #: ckan/logic/action/create.py:1125
 msgid "You cannot follow yourself"
-msgstr "You cannot follow yourself"
+msgstr "You cannot subscribe to yourself"
 
 #: ckan/logic/action/create.py:1133 ckan/logic/action/create.py:1190
 #: ckan/logic/action/create.py:1318
 msgid "You are already following {0}"
-msgstr "You are already following {0}"
+msgstr "You are already subscribed to {0}"
 
 #: ckan/logic/action/create.py:1164 ckan/logic/action/create.py:1172
 msgid "You must be logged in to follow a dataset."
-msgstr "You must be logged in to follow a dataset."
+msgstr "You must be logged in to subscribe to a dataset."
 
 #: ckan/logic/action/create.py:1224
 msgid "User {username} does not exist."
@@ -1570,7 +1570,7 @@ msgstr ""
 
 #: ckan/logic/action/create.py:1294 ckan/logic/action/create.py:1302
 msgid "You must be logged in to follow a group."
-msgstr "You must be logged in to follow a group."
+msgstr "You must be logged in to subscribe to a collection."
 
 #: ckan/logic/action/delete.py:68
 #, python-format
@@ -1605,11 +1605,11 @@ msgstr "Could not find tag \"%s\""
 
 #: ckan/logic/action/delete.py:498 ckan/logic/action/delete.py:502
 msgid "You must be logged in to unfollow something."
-msgstr "You must be logged in to unfollow something."
+msgstr "You must be logged in to subscribe to something."
 
 #: ckan/logic/action/delete.py:513
 msgid "You are not following {0}."
-msgstr "You are not following {0}."
+msgstr "You are not subscribed to {0}."
 
 #: ckan/logic/action/get.py:1649
 msgid "Do not specify if using \"query\" parameter"
@@ -1665,7 +1665,7 @@ msgstr "User %s not authorized to create packages"
 #: ckan/logic/auth/create.py:23 ckan/logic/auth/update.py:39
 #, python-format
 msgid "User %s not authorized to edit these groups"
-msgstr "User %s not authorized to edit these groups"
+msgstr "User %s not authorized to edit these collections"
 
 #: ckan/logic/auth/create.py:30
 #, python-format
@@ -1688,7 +1688,7 @@ msgstr "User %s not authorized to edit these packages"
 #: ckan/logic/auth/create.py:91
 #, python-format
 msgid "User %s not authorized to create groups"
-msgstr "User %s not authorized to create groups"
+msgstr "User %s not authorized to create collections"
 
 #: ckan/logic/auth/create.py:101
 #, python-format
@@ -1705,7 +1705,7 @@ msgstr ""
 
 #: ckan/logic/auth/create.py:163
 msgid "Group was not found."
-msgstr "Group was not found."
+msgstr "Collection was not found."
 
 #: ckan/logic/auth/create.py:183
 msgid "Valid API key needed to create a package"
@@ -1713,7 +1713,7 @@ msgstr "Valid API key needed to create a package"
 
 #: ckan/logic/auth/create.py:191
 msgid "Valid API key needed to create a group"
-msgstr "Valid API key needed to create a group"
+msgstr "Valid API key needed to create a collection"
 
 #: ckan/logic/auth/create.py:211
 #, python-format
@@ -1723,7 +1723,7 @@ msgstr "User %s not authorized to add members"
 #: ckan/logic/auth/create.py:235 ckan/logic/auth/update.py:107
 #, python-format
 msgid "User %s not authorized to edit group %s"
-msgstr "User %s not authorized to edit group %s"
+msgstr "User %s not authorized to edit collection %s"
 
 #: ckan/logic/auth/delete.py:19
 #, python-format
@@ -1752,12 +1752,12 @@ msgstr "User %s not authorized to delete relationship %s"
 #: ckan/logic/auth/delete.py:85
 #, python-format
 msgid "User %s not authorized to delete groups"
-msgstr "User %s not authorized to delete groups"
+msgstr "User %s not authorized to delete collections"
 
 #: ckan/logic/auth/delete.py:89
 #, python-format
 msgid "User %s not authorized to delete group %s"
-msgstr "User %s not authorized to delete group %s"
+msgstr "User %s not authorized to delete collection %s"
 
 #: ckan/logic/auth/delete.py:106
 #, python-format
@@ -1829,12 +1829,12 @@ msgstr "You must be a sysadmin to change a related item's featured field."
 #: ckan/logic/auth/update.py:159
 #, python-format
 msgid "User %s not authorized to change state of group %s"
-msgstr "User %s not authorized to change state of group %s"
+msgstr "User %s not authorized to change state of collection %s"
 
 #: ckan/logic/auth/update.py:176
 #, python-format
 msgid "User %s not authorized to edit permissions of group %s"
-msgstr "User %s not authorized to edit permissions of group %s"
+msgstr "User %s not authorized to edit permissions of collection %s"
 
 #: ckan/logic/auth/update.py:203
 msgid "Have to be logged in to edit user"
@@ -1866,7 +1866,7 @@ msgstr "Valid API key needed to edit a package"
 
 #: ckan/logic/auth/update.py:275
 msgid "Valid API key needed to edit a group"
-msgstr "Valid API key needed to edit a group"
+msgstr "Valid API key needed to edit a collection"
 
 #: ckan/model/license.py:177
 msgid "License Not Specified"
@@ -2046,14 +2046,14 @@ msgstr "Cancel"
 #: ckan/templates_legacy/js_strings.html:16
 #: ckan/templates_legacy/snippets/follow_button.html:9
 msgid "Follow"
-msgstr "Follow"
+msgstr "Subscribe"
 
 #: ckan/public/base/javascript/modules/follow.js:24
 #: ckan/templates/snippets/follow_button.html:9
 #: ckan/templates_legacy/js_strings.html:16
 #: ckan/templates_legacy/snippets/follow_button.html:8
 msgid "Unfollow"
-msgstr "Unfollow"
+msgstr "Unsubscribe"
 
 #: ckan/public/base/javascript/modules/image-upload.js:15
 #: ckan/templates_legacy/js_strings.html:16
@@ -2523,7 +2523,7 @@ msgstr "Select"
 #: ckan/templates/snippets/group.html:24
 #: ckan/templates/snippets/group_item.html:18
 msgid "There is no description for this group"
-msgstr "There is no description for this group"
+msgstr "There is no description for this collection"
 
 #: ckan/templates/group/activity_stream.html:3
 #: ckan/templates/group/activity_stream.html:6
@@ -2550,11 +2550,11 @@ msgstr "Administrators"
 #: ckan/templates/group/base_form_page.html:7
 #: ckan/templates_legacy/group/layout.html:32
 msgid "Add a Group"
-msgstr "Add a Group"
+msgstr "Add a Collection"
 
 #: ckan/templates/group/base_form_page.html:11
 msgid "Group Form"
-msgstr "Group Form"
+msgstr "Collection Form"
 
 #: ckan/templates/group/confirm_delete.html:3
 #: ckan/templates/group/confirm_delete.html:15
@@ -2575,7 +2575,7 @@ msgstr "Confirm Delete"
 
 #: ckan/templates/group/confirm_delete.html:11
 msgid "Are you sure you want to delete group - {name}?"
-msgstr "Are you sure you want to delete group - {name}?"
+msgstr "Are you sure you want to delete collection - {name}?"
 
 #: ckan/templates/group/confirm_delete_member.html:11
 #: ckan/templates/organization/confirm_delete_member.html:11
@@ -2596,7 +2596,7 @@ msgstr ""
 
 #: ckan/templates/group/edit.html:12
 msgid "Edit Group"
-msgstr "Edit Group"
+msgstr "Edit Collection"
 
 #: ckan/templates/group/edit_base.html:16
 #: ckan/templates/organization/edit_base.html:17
@@ -2628,7 +2628,7 @@ msgstr "Members"
 #: ckan/templates_legacy/package/followers.html:11
 #: ckan/templates_legacy/user/read.html:65
 msgid "Followers"
-msgstr "Followers"
+msgstr "Subscribers"
 
 #: ckan/templates/group/history.html:3 ckan/templates/group/history.html:6
 #: ckan/templates/package/history.html:3 ckan/templates/package/history.html:6
@@ -2641,15 +2641,15 @@ msgstr "History"
 #: ckan/templates/user/dashboard_groups.html:7
 #: ckan/templates_legacy/js_strings.html:16
 msgid "Add Group"
-msgstr "Add Group"
+msgstr "Add Collection"
 
 #: ckan/templates/group/index.html:20
 msgid "Search groups..."
-msgstr ""
+msgstr "Search collections..."
 
 #: ckan/templates/group/index.html:29
 msgid "There are currently no groups for this site"
-msgstr "There are currently no groups for this site"
+msgstr "There are currently no collections for this site"
 
 #: ckan/templates/group/index.html:31
 #: ckan/templates/organization/index.html:31
@@ -2771,27 +2771,27 @@ msgid ""
 "organization members.</p> <p><strong>Member:</strong> Can add/remove "
 "datasets from groups</p> "
 msgstr ""
-" <p><strong>Admin:</strong> Can edit group information, as well as manage "
-"publisher members.</p> <p><strong>Member:</strong> Can add/remove datasets "
-"from groups</p> "
+" <p><strong>Admin:</strong> Can edit collection information, as well as "
+"manage publisher members.</p> <p><strong>Member:</strong> Can add/remove "
+"datasets from collections</p> "
 
 #: ckan/templates/group/new.html:3 ckan/templates/group/new.html:5
 #: ckan/templates/group/new.html:7
 msgid "Create a Group"
-msgstr "Create a Group"
+msgstr "Create a Collection"
 
 #: ckan/templates/group/new_group_form.html:17
 msgid "Update Group"
-msgstr "Update Group"
+msgstr "Update Collection"
 
 #: ckan/templates/group/new_group_form.html:19
 msgid "Create Group"
-msgstr "Create Group"
+msgstr "Create Collection"
 
 #: ckan/templates/group/snippets/feeds.html:3
 #: ckan/templates/organization/snippets/feeds.html:3
 msgid "Datasets in group: {group}"
-msgstr "Datasets in group: {group}"
+msgstr "Datasets in collection: {group}"
 
 #: ckan/templates/group/snippets/feeds.html:4
 #: ckan/templates/organization/snippets/feeds.html:4
@@ -2808,11 +2808,11 @@ msgstr "Name"
 
 #: ckan/templates/group/snippets/group_form.html:10
 msgid "My Group"
-msgstr "My Group"
+msgstr "My Collection"
 
 #: ckan/templates/group/snippets/group_form.html:18
 msgid "my-group"
-msgstr "my-group"
+msgstr "my-collection"
 
 #: ckan/templates/group/snippets/group_form.html:20
 #: ckan/templates/organization/snippets/organization_form.html:20
@@ -2829,19 +2829,19 @@ msgstr "Description"
 
 #: ckan/templates/group/snippets/group_form.html:20
 msgid "A little information about my group..."
-msgstr "A little information about my group..."
+msgstr "A little information about my collection..."
 
 #: ckan/templates/group/snippets/group_form.html:80
 msgid "Are you sure you want to delete this Group?"
-msgstr "Are you sure you want to delete this Group?"
+msgstr "Are you sure you want to delete this Collection?"
 
 #: ckan/templates/group/snippets/group_form.html:85
 msgid "Save Group"
-msgstr "Save Group"
+msgstr "Save Collection"
 
 #: ckan/templates/group/snippets/group_item.html:27
 msgid "This group has no description"
-msgstr "This group has no description"
+msgstr "This collection has no description"
 
 #: ckan/templates/group/snippets/group_item.html:32
 #: ckan/templates/organization/snippets/organization_item.html:31
@@ -2862,11 +2862,11 @@ msgstr "View {name}"
 
 #: ckan/templates/group/snippets/group_item.html:41
 msgid "Remove dataset from this group"
-msgstr ""
+msgstr "Remove dataset from this collection"
 
 #: ckan/templates/group/snippets/helper.html:4
 msgid "What are Groups?"
-msgstr "What are Groups?"
+msgstr "What are Collections?"
 
 #: ckan/templates/group/snippets/helper.html:8
 msgid ""
@@ -2875,6 +2875,10 @@ msgid ""
 "particular theme, or as a very simple way to help people find and search "
 "your own published datasets. "
 msgstr ""
+" You can use CKAN Collections to create and manage collections of datasets. "
+"This could be to catalogue datasets for a particular project or team, or on "
+"a particular theme, or as a very simple way to help people find and search "
+"your own published datasets. "
 
 #: ckan/templates/group/snippets/history_revisions.html:10
 #: ckan/templates/package/snippets/history_revisions.html:10
@@ -3040,11 +3044,11 @@ msgstr "publishers"
 
 #: ckan/templates/home/snippets/stats.html:22
 msgid "group"
-msgstr ""
+msgstr "collection"
 
 #: ckan/templates/home/snippets/stats.html:22
 msgid "groups"
-msgstr ""
+msgstr "collections"
 
 #: ckan/templates/home/snippets/stats.html:28
 msgid "related item"
@@ -3348,15 +3352,15 @@ msgstr ""
 
 #: ckan/templates/package/group_list.html:14
 msgid "Associate this group with this dataset"
-msgstr ""
+msgstr "Associate this collection with this dataset"
 
 #: ckan/templates/package/group_list.html:14
 msgid "Add to group"
-msgstr ""
+msgstr "Add to collection"
 
 #: ckan/templates/package/group_list.html:23
 msgid "There are no groups associated with this dataset"
-msgstr ""
+msgstr "There are no collections associated with this dataset"
 
 #: ckan/templates/package/new_package_form.html:23
 msgid "Update Dataset"
@@ -4211,22 +4215,22 @@ msgstr ""
 #: ckan/templates/snippets/search_result_text.html:21
 msgid "{number} group found for \"{query}\""
 msgid_plural "{number} groups found for \"{query}\""
-msgstr[0] "{number} group found for \"{query}\""
+msgstr[0] "{number} collection found for \"{query}\""
 msgstr[1] "{number} groups found for \"{query}\""
 
 #: ckan/templates/snippets/search_result_text.html:22
 msgid "No groups found for \"{query}\""
-msgstr ""
+msgstr "No collections found for \"{query}\""
 
 #: ckan/templates/snippets/search_result_text.html:23
 msgid "{number} group found"
 msgid_plural "{number} groups found"
-msgstr[0] "{number} group found"
+msgstr[0] "{number} collection found"
 msgstr[1] "{number} groups found"
 
 #: ckan/templates/snippets/search_result_text.html:24
 msgid "No groups found"
-msgstr ""
+msgstr "No collections found"
 
 #: ckan/templates/snippets/search_result_text.html:27
 msgid "{number} organization found for \"{query}\""
@@ -4300,11 +4304,11 @@ msgstr "My Publishers"
 #: ckan/templates/user/dashboard.html:22
 #: ckan/templates/user/dashboard_groups.html:12
 msgid "My Groups"
-msgstr ""
+msgstr "My Collections"
 
 #: ckan/templates/user/dashboard.html:39
 msgid "Activity from items that I'm following"
-msgstr ""
+msgstr "Activity from items that I'm subscribed to"
 
 #: ckan/templates/user/dashboard_datasets.html:17
 #: ckan/templates/user/read.html:14
@@ -4320,7 +4324,7 @@ msgstr "Create one now?"
 
 #: ckan/templates/user/dashboard_groups.html:20
 msgid "You are not a member of any groups."
-msgstr ""
+msgstr "You are not a member of any collections."
 
 #: ckan/templates/user/dashboard_organizations.html:20
 msgid "You are not a member of any organizations."
@@ -4484,7 +4488,7 @@ msgstr "Why Sign Up?"
 
 #: ckan/templates/user/new.html:24
 msgid "Create datasets, groups and other exciting things"
-msgstr "Create datasets, groups and other exciting things"
+msgstr "Create datasets, collections and other exciting things"
 
 #: ckan/templates/user/new_user_form.html:6
 msgid "Full Name"
@@ -4571,11 +4575,11 @@ msgstr "Search list..."
 
 #: ckan/templates/user/snippets/followee_dropdown.html:42
 msgid "You are not following anything"
-msgstr "You are not following anything"
+msgstr "You are not subscribed to anything"
 
 #: ckan/templates/user/snippets/followers.html:9
 msgid "No followers"
-msgstr "No followers"
+msgstr "No subscribers"
 
 #: ckan/templates/user/snippets/user_search.html:5
 #: ckan/templates_legacy/user/list.html:11
@@ -4959,7 +4963,7 @@ msgstr "Edit:"
 #: ckan/templates_legacy/group/edit_form.html:17
 #: ckan/templates_legacy/group/new_group_form.html:114
 msgid "There are no datasets currently in this group."
-msgstr "There are no datasets currently in this group."
+msgstr "There are no datasets currently in this collection."
 
 #: ckan/templates_legacy/group/history.html:5
 #: ckan/templates_legacy/group/history.html:6
@@ -4974,16 +4978,16 @@ msgstr "Compare »"
 
 #: ckan/templates_legacy/group/history.html:54
 msgid "Group History"
-msgstr "Group History"
+msgstr "Collection History"
 
 #: ckan/templates_legacy/group/index.html:6
 #: ckan/templates_legacy/group/index.html:7
 msgid "Groups of Datasets"
-msgstr "Groups of Datasets"
+msgstr "Collections of Datasets"
 
 #: ckan/templates_legacy/group/index.html:11
 msgid "What Are Groups?"
-msgstr "What Are Groups?"
+msgstr "What Are Collections?"
 
 #: ckan/templates_legacy/group/index.html:12
 msgid ""
@@ -5007,16 +5011,16 @@ msgstr "Existing Dataset..."
 
 #: ckan/templates_legacy/group/layout.html:29
 msgid "List Groups"
-msgstr "List Groups"
+msgstr "List Collections"
 
 #: ckan/templates_legacy/group/layout.html:35
 msgid "Login to Add a Group"
-msgstr "Login to Add a Group"
+msgstr "Login to Add a Collection"
 
 #: ckan/templates_legacy/group/new.html:5
 #: ckan/templates_legacy/group/new.html:6
 msgid "Add A Group"
-msgstr "Add A Group"
+msgstr "Add A Collection"
 
 #: ckan/templates_legacy/group/new_group_form.html:13
 #: ckan/templates_legacy/package/form.html:7
@@ -5047,7 +5051,7 @@ msgstr "Image URL:"
 
 #: ckan/templates_legacy/group/new_group_form.html:50
 msgid "The URL for the image that is associated with this group."
-msgstr "The URL for the image that is associated with this group."
+msgstr "The URL for the image that is associated with this collection."
 
 #: ckan/templates_legacy/group/new_group_form.html:57
 #: ckan/templates_legacy/package/new_package_form.html:271
@@ -5389,11 +5393,11 @@ msgstr "Edit Resources:"
 
 #: ckan/templates_legacy/package/followers.html:6
 msgid "- Datasets - Followers"
-msgstr "- Datasets - Followers"
+msgstr "- Datasets - Subscribers"
 
 #: ckan/templates_legacy/package/followers.html:7
 msgid "Followers:"
-msgstr "Followers:"
+msgstr "Subscribers:"
 
 #: ckan/templates_legacy/package/followers.html:8
 #: ckan/templates_legacy/related/dashboard.html:14
@@ -5433,7 +5437,7 @@ msgstr "Apps, Ideas etc"
 #: ckan/templates_legacy/package/layout.html:40
 #: ckan/templates_legacy/user/layout.html:27
 msgid "Followers ({num_followers})"
-msgstr "Followers ({num_followers})"
+msgstr "Subscribers ({num_followers})"
 
 #: ckan/templates_legacy/package/layout.html:53
 msgid "Settings"
@@ -5481,7 +5485,7 @@ msgstr "Add to:"
 
 #: ckan/templates_legacy/package/new_package_form.html:112
 msgid "Cannot add any groups."
-msgstr "Cannot add any groups."
+msgstr "Cannot add any collections."
 
 #: ckan/templates_legacy/package/new_package_form.html:122
 msgid ""
@@ -6008,11 +6012,11 @@ msgstr "Add a new dataset"
 
 #: ckan/templates_legacy/user/dashboard.html:29
 msgid "Follow another user"
-msgstr "Follow another user"
+msgstr "Subscribe to another user"
 
 #: ckan/templates_legacy/user/dashboard.html:30
 msgid "Create a group or a tag"
-msgstr "Create a group or a tag"
+msgstr "Create a collection or a tag"
 
 #: ckan/templates_legacy/user/dashboard.html:31
 msgid "Or simply browse the repository"
@@ -6061,11 +6065,11 @@ msgstr ""
 
 #: ckan/templates_legacy/user/followers.html:6
 msgid "- Followers - User"
-msgstr "- Followers - User"
+msgstr "- Subscribers - User"
 
 #: ckan/templates_legacy/user/followers.html:8
 msgid "'s Followers"
-msgstr "'s Followers"
+msgstr "'s Subscribers"
 
 #: ckan/templates_legacy/user/layout.html:12
 msgid "My Profile"
@@ -6077,7 +6081,7 @@ msgstr "Edit Profile"
 
 #: ckan/templates_legacy/user/layout.html:16
 msgid "My Followers ({num_followers})"
-msgstr "My Followers ({num_followers})"
+msgstr "My Subscribers ({num_followers})"
 
 #: ckan/templates_legacy/user/layout.html:25
 msgid "View Profile"
@@ -6462,11 +6466,11 @@ msgstr "No edited datasets"
 #: ckanext/stats/templates/ckanext/stats/index.html:182
 #: ckanext/stats/templates_legacy/ckanext/stats/index.html:80
 msgid "Largest Groups"
-msgstr "Largest Groups"
+msgstr "Largest Collections"
 
 #: ckanext/stats/templates/ckanext/stats/index.html:127
 msgid "No groups"
-msgstr "No groups"
+msgstr "No collections"
 
 #: ckanext/stats/templates/ckanext/stats/index.html:132
 #: ckanext/stats/templates/ckanext/stats/index.html:183
@@ -6522,7 +6526,7 @@ msgid ""
 "the most datasets. E.g. tags, groups, license, res_format, country."
 msgstr ""
 "Choose a dataset attribute and find out which categories in that area have "
-"the most datasets. E.g. tags, groups, license, res_format, country."
+"the most datasets. E.g. tags, collections, license, res_format, country."
 
 #: ckanext/stats/templates_legacy/ckanext/stats/leaderboard.html:20
 msgid "Choose area"
