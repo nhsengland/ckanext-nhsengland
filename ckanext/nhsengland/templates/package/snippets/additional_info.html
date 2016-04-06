@@ -3,7 +3,6 @@
   <h2>{{ _('Additional Information') }}</h2>
   <table class="table table-condensed">
     <tbody>
-      {{ pkg_dict }}
       {% block package_additional_info %}
           <tr>
             <th scope="row" class="dataset-label">Coverage Start Date</th>
@@ -99,4 +98,14 @@
       {% endblock %}
     </tbody>
   </table>
+  {% if pkg_dict.datadirectoryprojectname and pkg_dict.datadirectorylink %}
+  <h2>
+    Usage of this dataset
+  </h2>
+  <p>
+    This dataset has been used in the
+    <a href="{{ pkg_dict.datadirectorylink }}">{{ pkg_dict.datadirectoryprojectname }}</a> project.
+    Find more details in the <a href="{{ pkg_dict.datadirectorylink }}">Health Data Directory</a>.
+  </p>
+  {% endif %}
 </section>
