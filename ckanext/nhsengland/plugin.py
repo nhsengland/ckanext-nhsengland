@@ -146,6 +146,10 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
                                                ('frequency'), ],
             'homepage': [toolkit.get_validator('ignore_missing'),
                          convert_to_extras, ],
+            'directoryprojectlink': [toolkit.get_validator('ignore_missing'),
+                         convert_to_extras, ],
+            'directoryprojectname': [toolkit.get_validator('ignore_missing'),
+                         convert_to_extras, ],
         })
         return schema
 
