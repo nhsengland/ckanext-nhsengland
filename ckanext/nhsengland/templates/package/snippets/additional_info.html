@@ -102,13 +102,14 @@
   <hr>
   {{ pkg_dict.extras }}
   <hr>
+  {% set extras = {i['key']:i['value'] for i in pkg_dict.extras} %}
   <h2>
     Usage of this dataset
   </h2>
   <p>
     This dataset has been used in the
-    <a href="{{ pkg_dict.extras.directoryprojectlink }}">{{ pkg_dict.extras.directoryprojectname }}</a> project.
-    Find more details in the <a href="{{ pkg_dict.extras.directoryprojectlink }}">Health Data Directory</a>.
+    <a href="{{ extras.directoryprojectlink }}">{{ extras.directoryprojectname }}</a> project.
+    Find more details in the <a href="{{ extras.directoryprojectlink }}">Health Data Directory</a>.
   </p>
 
 </section>
