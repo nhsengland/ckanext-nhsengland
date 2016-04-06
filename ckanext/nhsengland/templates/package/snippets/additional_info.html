@@ -3,6 +3,7 @@
   <h2>{{ _('Additional Information') }}</h2>
   <table class="table table-condensed">
     <tbody>
+      {{ pkg_dict }}
       {% block package_additional_info %}
           <tr>
             <th scope="row" class="dataset-label">Coverage Start Date</th>
