@@ -4,7 +4,7 @@
     <hgroup class="header-strapline">
       <h1>
       {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
-      </h1>     
+      </h1>
     </hgroup>
     <hgroup class="{{ g.header_class }}">
       {% block header_logo %}
@@ -36,6 +36,7 @@
                 ('search', _('Datasets')),
                 ('organizations_index', _('Organizations')),
                 ('group_index', _('Groups')),
+                ('datadirectory', _('Data Directory')),
                 ('about', _('About')),
                 ('howto', _('Howto'))
               ) }}
@@ -43,7 +44,7 @@
             <li><a href="javascript:void(0)" onClick="javascript:introJs().start();" data-intro="Clicking the 'Help' link will display on-page walkthrough information. Click the 'Next' and 'Back' buttons below to navigate the walkthrough. Clicking 'Skip' returns you to the page." data-step="1">Help</a></li>
           </ul>
             <ul class="nav nav-pills pull-right" {% if c.userobj %}data-intro="We notice that you're logged in. Important links about your account can be found here."{% endif %}>
-	      
+
               {% if c.userobj %}
               {% block header_account_logged %}
               {% if c.userobj.sysadmin %}
