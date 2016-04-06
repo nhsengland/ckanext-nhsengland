@@ -174,6 +174,10 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
                           toolkit.get_validator('ignore_missing'), ],
             'homepage': [toolkit.get_converter('convert_from_extras'),
                          toolkit.get_validator('ignore_missing'), ],
+            'directoryprojectlink': [toolkit.get_converter('convert_from_extras'),
+                         toolkit.get_validator('ignore_missing'), ],
+            'directoryprojectname': [toolkit.get_converter('convert_from_extras'),
+                                     toolkit.get_validator('ignore_missing'), ],
         })
         return schema
 
