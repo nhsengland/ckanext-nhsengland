@@ -98,11 +98,7 @@
       {% endblock %}
     </tbody>
   </table>
-  {{ pkg_dict}}
-  <hr>
-  {{ pkg_dict.extras }}
-  <hr>
-  {% set extras = {i['key']:i['value'] for i in pkg_dict.extras} %}
+  {% set extras = h.get_extras(pkg_dict.extras) %}
   <h2>
     Usage of this dataset
   </h2>
