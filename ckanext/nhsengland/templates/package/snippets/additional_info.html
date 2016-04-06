@@ -98,7 +98,7 @@
       {% endblock %}
     </tbody>
   </table>
-  {% set extras = h.get_extras(pkg_dict.extras) %}
+  {% if pkg_dict.directoryprojectlink and pkg_dict.directoryprojectname %}
   <h2>
     Usage of this dataset
   </h2>
@@ -108,5 +108,5 @@
     <br />
     Find more details in the <a href="{{ pkg_dict.directoryprojectlink }}">Health Data Directory</a>.
   </p>
-
+  {% endif %}
 </section>
