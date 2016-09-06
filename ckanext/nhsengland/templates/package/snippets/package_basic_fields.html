@@ -153,3 +153,8 @@
   {% endif %}
 
 {% endblock %}
+
+{% block package_basic_fields_directory %}
+    {{ form.input('directoryprojectname', label=_('Data Directory Project Name'), id='field-directoryprojectname', placeholder=_('The project name'), value=data.directoryprojectname, error=errors.directoryprojectname, classes=['control-medium']) }}
+    {{ form.input('directoryprojectlink', label=_('Data Directory Project Link'), id='field-directoryprojectlink', placeholder=_('http://example.com/project/'), value=data.directoryprojectlink, error=errors.directoryprojectlink, classes=['control-medium']) }}
+{% endblock %}

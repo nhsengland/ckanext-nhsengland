@@ -22,3 +22,6 @@ def get_collection(name):
         return logic.get_action('group_show')({}, {'id': name})
     except (logic.NotFound, logic.ValidationError, logic.NotAuthorized):
         return {}
+
+def get_extras(extras):
+    return {i['key']:i['value'] for i in extras}

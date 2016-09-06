@@ -102,11 +102,12 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.ITemplateHelpers)
 
     def get_helpers(self):
-        from ckanext.nhsengland.helpers import split_resources, get_collection
+        from ckanext.nhsengland.helpers import split_resources, get_collection, get_extras
         return {
             'frequencies'    : frequencies,
             'split_resources': split_resources,
-            'get_collection' : get_collection
+            'get_collection' : get_collection,
+            'get_extras'     : get_extras
         }
 
     def update_config(self, config):
@@ -145,6 +146,10 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
                                                ('frequency'), ],
             'homepage': [toolkit.get_validator('ignore_missing'),
                          convert_to_extras, ],
+            'directoryprojectlink': [toolkit.get_validator('ignore_missing'),
+                         convert_to_extras, ],
+            'directoryprojectname': [toolkit.get_validator('ignore_missing'),
+                         convert_to_extras, ],
         })
         return schema
 
@@ -173,6 +178,10 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
                           toolkit.get_validator('ignore_missing'), ],
             'homepage': [toolkit.get_converter('convert_from_extras'),
                          toolkit.get_validator('ignore_missing'), ],
+            'directoryprojectlink': [toolkit.get_converter('convert_from_extras'),
+                         toolkit.get_validator('ignore_missing'), ],
+            'directoryprojectname': [toolkit.get_converter('convert_from_extras'),
+                                     toolkit.get_validator('ignore_missing'), ],
         })
         return schema
 
@@ -192,6 +201,6 @@ class NHSEController(base.BaseController):
 
     def howto(self):
         return base.render('howto.html')
-        
+
     def boardreport(self):
         return base.render('boardreport.html')
