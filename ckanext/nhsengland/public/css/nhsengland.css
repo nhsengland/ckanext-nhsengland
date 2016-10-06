@@ -305,23 +305,22 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
     color: #a00054; text-decoration: none;
 }
 
-li.resource-item:after{
-  /*
-  * clearfix
-  */
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-
 li.resource-item .btn-group{
   /*
   * buttons can get overly large, so lets float them
   */
-  float: right;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.resource-item-description{
+  width: 40%;
+}
+
+.resource-item-options{
+  width: 55%;
+  text-align: right;
 }
 
 
