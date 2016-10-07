@@ -9,18 +9,18 @@
     {{ h.popular('views', res.tracking_summary.total, min=10) }}
   </a>
   {% endblock %}
-  <div class="resource-item-description">
-    <p class="description">
-      {% if res.description %}
-        {{ h.markdown_extract(res.description, extract_length=80) }}
-      {% endif %}
-    </p>
-  </div>
-  <div class="resource-item-options">
-    {% block resource_item_explore %}
-    {% if not url_is_edit %}
-    <div class="dropdown btn-group">
-
+  <div class="resource-item-information">
+    <div class="resource-item-description">
+      <p class="description">
+        {% if res.description %}
+          {{ h.markdown_extract(res.description, extract_length=80) }}
+        {% endif %}
+      </p>
+    </div>
+    <div class="resource-item-options">
+      {% block resource_item_explore %}
+      {% if not url_is_edit %}
+        <div class="dropdown btn-group">
           <a href="{{ url }}" class="btn">
             {% if res.can_be_previewed %}
               <i class="icon-bar-chart"></i>
@@ -40,14 +40,15 @@
               {{ _('Go to resource') }}
             {% endif %}
           </a>
-        {% if can_edit %}
-          <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=res.id) }}" class="btn">
-            <i class="icon-edit"></i>
-            {{ _('Edit') }}
-          </a>
-        {% endif %}
-    </div>
-  </div>
+          {% if can_edit %}
+            <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=res.id) }}" class="btn">
+              <i class="icon-edit"></i>
+              {{ _('Edit') }}
+            </a>
+          {% endif %}
+      </div>
   {% endif %}
+  </div>
+  </div>
   {% endblock %}
 </li>

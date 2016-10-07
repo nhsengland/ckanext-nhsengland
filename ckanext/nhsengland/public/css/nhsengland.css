@@ -306,24 +306,27 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
 }
 
 li.resource-item .btn-group{
-  /*
-  * buttons can get overly large, so lets float them
-  */
   position: relative;
-  top: 0;
+  top: -10px;
   right: 0;
+}
+
+.resource-item-information{
+  margin-top: 5px;
 }
 
 .resource-item-description{
   width: 40%;
+  display: inline-block;
 }
 
 .resource-item-options{
   width: 55%;
   text-align: right;
   position: relative;
-  top: -10px;
+  top: 0;
   right: 0;
+  display: inline-block;
 }
 
 
