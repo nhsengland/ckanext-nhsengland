@@ -1,26 +1,129 @@
-/* DOM level Resets */
 body {
     background: #fff;
-    margin-top: 20px;
+    margin-top: 0;
+    box-sizing: border-box;
+    color: #202a30;
+    /* font-family: "-apple-system-body", ".SFNSText-Regular", "San Francisco", Roboto;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #0072c6;
-    font-weight: lighter;
+    color: #003097;
     font-family: FrutigerLight, Arial, sans-serif;
 }
 
-a {
-    color: #1CB2D7;
-    /*color: #125194;*/
+.top-logo{
+   width: calc(50% - 10px);
+   margin-left: 20px;
 }
+
+.top-search{
+   float: right;
+   width: calc(50% - 10px);
+}
+
+.top-search .search-input{
+   float: right;
+   width: 100%;
+   text-align: right;
+   padding-top: 28px;
+}
+
+.top-search .search-input input{
+   border-radius: 0;
+   border: 2px solid #FFF;
+   padding: 5px;
+   margin: 0;
+   outline: 0;
+   height: 38px;
+   box-sizing: border-box;
+   width: 50%;
+}
+
+.top-search .search-input input:focus{
+   border: 2px solid #ffb81c;
+}
+
+.top-search .search-input button{
+   border: 2px solid #fff;
+   color: #fff;
+   padding: 8px 30px;
+   border-radius: 0;
+}
+
+
+
+.module .module-content h1 {
+    font-size: 32px;
+    line-height: 36px;
+    margin: 30px 0;
+    color: #202a30;
+}
+
+a {
+    color: #005eb8;
+    text-decoration: none;
+}
+a:hover{
+    color: #1CB2D7;
+}
+
+.second-nav{
+    background-color: #0072ce;
+}
+
+.second-nav .nav > li a{
+    color: #fff;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 30px;
+}
+
+.second-nav a:hover:after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    background: #fff;
+}
+
+
+
+.nav-wrapper{
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+.flash-messages{
+   margin-left: 60px;
+}
+
+
+
 
 
 /* Bootstrap 2.x overrides*/
-
 .container {
-    width: 1000px;
+    width: 1200px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
+
+.wrapper .secondary{
+    padding: 0 30px;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.wrapper .primary{
+    padding: 0 30px;
+    width: 75%;
+    box-sizing: border-box;
+}
+
+
 
 .nav {
     font-size: 16px;
@@ -31,19 +134,22 @@ a {
     margin-bottom: 10px;
 }
 
-.nav li {
-    border-left: 1px solid white;
+.nav-pills>li>a{
+    border-radius: 0;
+    font-size: 18px;
 }
+
+
 .nav-pills>li>a.image {
     padding: 4px;
 }
 
-.nav li:first-of-type {
-    border-left: none;
+.nav > li.active {
+    background: #0072ce;
 }
 
-.nav > li.active {
-    background: #a00054;
+.nav > li a {
+    padding: 10px 15px;
 }
 
 .nav.nav-tabs > li.active {
@@ -61,7 +167,7 @@ a {
 
 .nav >li:hover,
 .nav >li.active:hover{
-    background: #a00054;
+    background: #0072ce;
 }
 
 .nav > li > a:hover,
@@ -84,15 +190,31 @@ a {
 .nav-item a:hover {
     color: white;
 }
+
+.nav-simple>li {
+    background-color: #e8edee;
+    margin-top: 5px;
+    border-bottom: None;
+    font-size: 16px;
+    padding: 0 0 0 30px;
+}
+
+.nav-simple>li a{
+    color: #425563;
+}
+
+
+
 /* CKAN utility class overrides - mostly for NHSE Brand compliance  */
 
 .super-masthead {
-    padding: 25px 0px 12px 0px;
+    background-color: #005eb8;
+    height: 100px;
+    padding: 15px 0 15px 0;
 }
 
 .header-strapline {
     float: left;
-    width: 410px;
 }
 
 .header-image {
@@ -102,8 +224,10 @@ a {
 }
 
 .account-masthead {
-    background: #0072c6;
+    background-color: #005eb8;
     color: #fff;
+    margin-bottom: 20px;
+    background-image: none;
 }
 
 .account-masthead .account ul li a {
@@ -126,10 +250,17 @@ a {
     background: #fff;
 }
 
+.header-strapline h1{
+   display: inline-block;
+}
+
+
 .header-strapline h2 {
-    color: black;
+    color: white;
     font-size: 30px;
     line-height: 1.2;
+    display: inline-block;
+    margin-left: 30px;
 }
 
 .navigation a {
@@ -150,8 +281,8 @@ a {
 
 .breadcrumb li {
     padding-right: 12px;
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 16px;
+    line-height: 100%;
     background: #fff url("/images/breadcrumb_chevron.png") no-repeat right 2px;
 }
 
@@ -160,6 +291,10 @@ a {
 }
 
 .toolbar .breadcrumb li a {
+    color: #005eb8;
+}
+
+.toolbar .breadcrumb li a:hover {
     color: #a00054;
 }
 
@@ -212,32 +347,44 @@ a {
 
 footer,
 footer li {
-    font-size: 12px;
-    line-height: 1.5;
-}
-footer .nav-pills>li>a {
-    padding: 0px 0px;
-}
-footer .nav-pills>li:hover {
-    background: none;
-}
-footer li a {
-    color: #a00054;
+    font-size: 16px;
 }
 
+.site-footer .nav{
+    float: left;
+}
+
+
 footer ul.nav li {
-    border-left: 1px solid black;
     padding: 0px 6px;
 }
 
-.site-footer {
-    background: #A00054;
+footer.site-footer, footer.site-footer a{
+    background-color: #e8edee;
+    background-image: none;
+    color: #425563;
 }
 
+footer.site-footer .nav a{
+    padding: 1px 0;
+}
+
+
+footer.site-footer a:hover{
+    background-color: #e8edee;
+    color: #425563;
+    text-decoration: underline;
+}
+
+.site-footer .nav >li:hover{
+    background-color: #e8edee;
+}
+
+
 .site-footer h2{
-    color: #FFF;
     text-align: center;
     font-size: 30px;
+    color: #425563;
 }
 
 a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
@@ -294,12 +441,6 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
    background: url("/images/sprite-resource-icons.png");
 }
 
-.pre-footer {
-    border-top: 1px solid black;
-    padding: 24px 0px;
-    margin-bottom: 24px;
-}
-
 .dataset-heading a,
 .resource-item a.heading  {
     color: #a00054; text-decoration: none;
@@ -329,13 +470,10 @@ li.resource-item .btn-group{
   display: inline-block;
 }
 
+.module:first-child h2.module-heading{
+    border-radius: 0;
+}
 
-/* These next four rules come straight from the branding guidelines */
-/* Let's try to make sure they stay here! */
-body {font-family: Arial, Helvetica, sans-serif; color: #000000;}
-a {color: #a00054; text-decoration: none;}
-a:hover {color: #003893;}
-h1, h2, h3 {color:#0072c6;}
 
 /* Well - except for these, which are different :( */
 .account-masthead .nav a:hover {
@@ -356,7 +494,6 @@ h1, h2, h3 {color:#0072c6;}
 
 .homepage .module-search {
     height: 321px;
-    width: 940px;
     background: url('/images/nhsengland_hero.jpg') no-repeat;
     background-position: left top;
     padding: 0px !important;
@@ -375,7 +512,6 @@ h1, h2, h3 {color:#0072c6;}
 
 .homepage .hero {
     padding: 0;
-    margin-top: -13px;
 }
 
 
@@ -393,7 +529,7 @@ h1, h2, h3 {color:#0072c6;}
 
 .homepage .module-search .search-form .search-input button,
 .search-form .search-input.search-giant button {
-    background-color: #0072c6;
+    background-color: #005eb8;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     color: #ffffff;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -401,6 +537,20 @@ h1, h2, h3 {color:#0072c6;}
     height: 52px;
     margin-top: -26px;
     width: 104px;
+}
+
+.homepage .module-search .search-form .search-input button,
+.search-form .search-input.search-giant button:hover {
+    background-color: #0072ce;
+    color: white;
+}
+
+.wrapper .search-form .search-input button i{
+    color: white;
+}
+
+.wrapper .search-form .search-input button i:hover{
+    color: white;
 }
 
 .homepage .module-search .search-form .search-input button span,
@@ -467,9 +617,7 @@ h1, h2, h3 {color:#0072c6;}
 }
 
 .featured-publishers li {
-    padding-left: 16px;
-    padding-top: 12px;
-    padding-bottom: 13px
+    padding-left: 0;
 }
 
 .featured-publishers li:hover a {
@@ -503,3 +651,22 @@ h1, h2, h3 {color:#0072c6;}
 th.dataset-label {
     text-align: right;
 }
+
+.logo img{
+    display: inline-block;
+    height: 90px;
+    width: auto;
+}
+
+.btn.btn-primary{
+    background: #005eb8;
+    background-image: none;
+    border: none;
+}
+
+.btn.btn-primary:hover{
+    background: #0072ce;
+}
+
+
+

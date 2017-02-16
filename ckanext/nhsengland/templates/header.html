@@ -1,17 +1,46 @@
+
 {% block header_wrapper %}
+<header class="second-nav">
+<div class="container">
+<div class="nav-wrapper">
+ <nav>
+     <ul class="nav nav-pills">
+	{{ h.build_nav_main(
+	('about', _('About')),
+	('howto', _('Howto'))
+	) }}
+	<li><a href="javascript:void(0)" onClick="javascript:introJs().start();" data-intro="Clicking the 'Help' link will display on-page walkthrough information. Click the 'Next' and 'Back' buttons below to navigate the walkthrough. Clicking 'Skip' returns you to the page." data-step="1">Help</a></li>
+      </ul>
+ </nav>
+</div>
+</div>
+</header>
 <header class="super-masthead">
   <div class="container">
-    <hgroup class="header-strapline">
-      <h1>
-      {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
-      </h1>
-    </hgroup>
-    <hgroup class="{{ g.header_class }}">
-      {% block header_logo %}
-          <a class="logo" href="http://www.england.nhs.uk"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
-      {% endblock %}
-    </hgroup>
-
+    <div class="nav-wrapper">
+      <div class="row">
+        <div class="top-logo">
+	    <hgroup class="header-strapline">
+	      {% block header_logo %}
+		  <a class="logo" href="http://www.england.nhs.uk"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
+	      {% endblock %}
+	      <h1>
+	      {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
+	      </h1>
+	    </hgroup>
+          </div>
+          <div class="top-search">
+            <div class="search-input search-giant">
+              <form method="get" action="/dataset">
+               <input type="text" class="search" name="q" value="" autocomplete="off" />
+                 <button type="submit" class="btn btn-primary">
+		    Find Data
+                 </button>
+              </form>
+         </div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -19,6 +48,7 @@
 {% block header_account %}
   <header class="account-masthead" >
     <div class="container">
+      <div class="nav-wrapper">
       {% if c.userobj %}
 	<!-- NOTE: This is used in the popover-context module. you need something on the page -->
 	<!-- with a class of account and the data-me attribute set for it to function. -->
@@ -36,12 +66,9 @@
                 ('search', _('Datasets')),
                 ('organizations_index', _('Organizations')),
                 ('group_index', _('Groups')),
-                ('about', _('About')),
-                ('howto', _('Howto'))
               ) }}
             {% endblock %}
             <li><a href="/datadirectory/">Directory</a></li>
-            <li><a href="javascript:void(0)" onClick="javascript:introJs().start();" data-intro="Clicking the 'Help' link will display on-page walkthrough information. Click the 'Next' and 'Back' buttons below to navigate the walkthrough. Clicking 'Skip' returns you to the page." data-step="1">Help</a></li>
           </ul>
             <ul class="nav nav-pills pull-right" {% if c.userobj %}data-intro="We notice that you're logged in. Important links about your account can be found here."{% endif %}>
 
@@ -104,6 +131,7 @@
 
       {% block header_account_container_content %}
       {% endblock %}
+      </div>
     </div>
   </header>
 {% endblock %}
