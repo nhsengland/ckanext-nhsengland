@@ -3,7 +3,7 @@
 
 <div class="module-search">
   <form class="module-content search-form" method="get" action="{% url_for controller='package', action='search' %}">
-    <h3 class="heading">{{ _("Find and explore the data used by NHS England to conduct its core business") }}</h3>
+    <h3 class="heading">{{ _("Explore the data used by NHS England") }}</h3>
     <div class="search-input control-group search-giant">
       <input type="text" class="search" name="q" value="" autocomplete="off" placeholder="Search {{ stats.dataset_count }} datasets..." />
       <button type="submit" class="btn btn-primary">

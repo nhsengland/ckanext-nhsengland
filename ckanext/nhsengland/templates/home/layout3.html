@@ -1,10 +1,37 @@
+<div class="container" role="main">
+<div class="wrapper">
+<div class="secondary">
+        <section class="module module-narrow module-shallow">
+          <h2 class="module-heading">
+            Publishers
+          </h2>
+          <nav>
+            <ul class="unstyled nav nav-simple featured-publishers">
+              {% for org in 'hscic nhs-england ons'.split() %}
+              <li>
+                <a href="/organization/{{ org }}" title="">
+                  {{ h.get_organization(org=org)['display_name'] }}
+                </a>
+              </li>
+              {% endfor %}
+              <li>
+                <a href="/organization" title="">
+                  <b>See all publishers</b>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+
+        </section>
+
+
+</div>
+<div class="primary">
 <div role="main" class="hero">
-  <div class="container">
     {% snippet 'home/snippets/search.html' %}
-  </div>
 </div>
 <div role="main">
-  <div class="container">
     <div class="row row2">
       <div class="span9 col1">
         <h2>Featured Datasets</h2>
@@ -54,32 +81,6 @@
           </div>
         </div> <!-- .our-featured-datasets -->
       </div>
-      <div class="span3 col1">
-        <section class="module module-narrow module-shallow">
-          <h2 class="module-heading">
-            Publishers
-          </h2>
-          <nav>
-            <ul class="unstyled nav nav-simple featured-publishers">
-              {% for org in 'hscic nhs-england ons'.split() %}
-              <li>
-                <a href="/organization/{{ org }}" title="">
-                  {{ h.get_organization(org=org)['display_name'] }}
-                </a>
-              </li>
-              {% endfor %}
-              <li>
-                <a href="/organization" title="">
-                  <b>See all publishers</b>
-                </a>
-              </li>
-              
-            </ul>
-          </nav>
-
-        </section>
-      </div>
-
       <div class="span9 col1">
         <h2>Featured Collections</h2>
         <div class="our-featured-datasets">
@@ -136,4 +137,6 @@
       
     </div>
   </div>
+</div>
+</div>
 </div>

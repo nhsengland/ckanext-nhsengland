@@ -12,8 +12,11 @@
   {% endblock -%}
 
   <div class="container" id="header-sub-nav">
+    <div class="nav-wrapper">
     <div class="row">
     {% block flash %}
+    <div class="span3">
+    </div>
     <div class="span9">
       {% set flash_messages = h.flash.pop_messages() | list %}
       <div class="flash-messages">
@@ -27,6 +30,7 @@
     {% endblock %}
     {% block header_site_search %}
     {% endblock %}
+    </div>
     </div>
   </div>
 
