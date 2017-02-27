@@ -713,7 +713,10 @@ footer.site-footer .social-networks a:visited{
 .social-networks a:hover::before{
     border-color: #818c94;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 43d0ba5e33384dfe5fd3db6cc16142684de01bf9
 
 .social-networks a[href^="http://twitter.com/"]:before, 
 .social-networks a[href^="http://www.twitter.com/"]:before, 
@@ -752,3 +755,34 @@ footer.site-footer .social-networks a:visited{
   width: auto;
 }
 
+.social-networks a[href^="http://twitter.com/"]:before, 
+.social-networks a[href^="http://www.twitter.com/"]:before, 
+.social-networks a[href^="https://twitter.com/"]:before, 
+.social-networks a[href^="https://www.twitter.com/"]:before {
+    background-image: url(../images/icons/twitter.svg);
+}
+
+.social-networks a[href^="http://linkedin.com/"]:before, 
+.social-networks a[href^="http://www.linkedin.com/"]:before, 
+.social-networks a[href^="https://linkedin.com/"]:before, 
+.social-networks a[href^="https://www.linkedin.com/"]:before {
+    background-image: url(../images/icons/linkedin.svg);
+}
+
+.social-networks a[href^="http://youtube.com/"]:before,
+.social-networks a[href^="http://www.youtube.com/"]:before,
+.social-networks a[href^="https://youtube.com/"]:before,
+.social-networks a[href^="https://www.youtube.com/"]:before {
+    background-image: url(../images/icons/youtube.svg);
+}
+
+.social-networks a[href^="http://flickr.com/"]:before,
+.social-networks a[href^="http://www.flickr.com/"]:before,
+.social-networks a[href^="https://flickr.com/"]:before,
+.social-networks a[href^="https://www.flickr.com/"]:before {
+    background-image: url(../images/icons/flickr.svg);
+}
+
+.social-networks a[href^="http://feeds.feedburner.com/"]:before {
+    background-image: url(../images/icons/rss.svg);
+}
