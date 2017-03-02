@@ -370,6 +370,7 @@ footer li {
 
 .site-footer .nav{
     float: left;
+    padding-left: 30px;
 }
 
 
@@ -381,6 +382,8 @@ footer.site-footer, footer.site-footer a{
     background-color: #e8edee;
     background-image: none;
     color: #425563;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 footer.site-footer .nav a{
@@ -686,5 +689,66 @@ th.dataset-label {
     background: #0072ce;
 }
 
+footer.site-footer .social-networks a:hover,
+footer.site-footer .social-networks a:focus,
+footer.site-footer .social-networks a:visited{
+    text-decoration: none;
+}
 
+
+
+.social-networks a:before{
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: center center;
+    z-index: 1000;
+    padding: 5px;
+    border: 2px solid #adbcc7;
+}
+
+.social-networks a:hover::before{
+    border-color: #818c94;
+}
+
+
+.social-networks a[href^="http://twitter.com/"]:before, 
+.social-networks a[href^="http://www.twitter.com/"]:before, 
+.social-networks a[href^="https://twitter.com/"]:before, 
+.social-networks a[href^="https://www.twitter.com/"]:before {
+    background-image: url(../images/icons/twitter.svg);
+}
+
+.social-networks a[href^="http://linkedin.com/"]:before, 
+.social-networks a[href^="http://www.linkedin.com/"]:before, 
+.social-networks a[href^="https://linkedin.com/"]:before, 
+.social-networks a[href^="https://www.linkedin.com/"]:before {
+    background-image: url(../images/icons/linkedin.svg);
+}
+
+.social-networks a[href^="http://youtube.com/"]:before,
+.social-networks a[href^="http://www.youtube.com/"]:before,
+.social-networks a[href^="https://youtube.com/"]:before,
+.social-networks a[href^="https://www.youtube.com/"]:before {
+    background-image: url(../images/icons/youtube.svg);
+}
+
+.social-networks a[href^="http://flickr.com/"]:before,
+.social-networks a[href^="http://www.flickr.com/"]:before,
+.social-networks a[href^="https://flickr.com/"]:before,
+.social-networks a[href^="https://www.flickr.com/"]:before {
+    background-image: url(../images/icons/flickr.svg);
+}
+
+.social-networks a[href^="http://feeds.feedburner.com/"]:before {
+    background-image: url(../images/icons/rss.svg);
+}
+
+.footer-logo{
+  height: 70px;
+  width: auto;
+}
 
