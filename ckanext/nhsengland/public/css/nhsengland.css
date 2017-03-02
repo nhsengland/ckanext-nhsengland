@@ -1,5 +1,4 @@
 https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/8c92eb68-ce37-4962-a9f4-5b47d336bd1c.woff2
-
 @font-face{
   font-family:"Frutiger LT W01_45 Ligh1475730";
   src:url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/81e3653a-53bd-49d9-a1f8-f924811b6f02.eot?#iefix");
@@ -13,7 +12,7 @@ https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/8c92eb68-ce
 @font-face{
   font-family:"Frutiger LT W01_65 Bold1475746";
   src:url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/eb06b4c3-c0fd-4cd0-a9d9-a2954f6839a7.eot?#iefix");
-  src:url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/eb06b4c3-c0fd-4cd0-a9d9-a2954f6839a7.eot?#iefix") format("eot"),url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/8c92eb68-ce37-4962-a9f4-5b47d336bd1c.woff2") format("woff2"),url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/9bdfdcac-bbd4-46a9-9280-056c9a4438a2.woff") format("woff"),url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/5dae3a6e-9b07-4c2f-aed2-1f5b8951261b.ttf") format("truetype"),url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/eae74276-dd78-47e4-9b27-dac81c3411ca.svg#eae74276-dd78-47e4-9b27-dac81c3411ca") format("svg");
+  src:url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/eb06b4c3-c0fd-4cd0-a9d9-a2954f6839a7.eot?#iefix") format("eot"),url("/fonts/frutiger-light.woff2") format("woff2"),url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/9bdfdcac-bbd4-46a9-9280-056c9a4438a2.woff") format("woff"),url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/5dae3a6e-9b07-4c2f-aed2-1f5b8951261b.ttf") format("truetype"),url("https://www.england.nhs.uk/wp-content/themes/nhsengland/assets/fonts/eae74276-dd78-47e4-9b27-dac81c3411ca.svg#eae74276-dd78-47e4-9b27-dac81c3411ca") format("svg");
 }
 
 body {
@@ -715,16 +714,16 @@ footer.site-footer .social-networks a:visited{
 }
 
 
-.social-networks a[href^="http://twitter.com/"]:before, 
-.social-networks a[href^="http://www.twitter.com/"]:before, 
-.social-networks a[href^="https://twitter.com/"]:before, 
+.social-networks a[href^="http://twitter.com/"]:before,
+.social-networks a[href^="http://www.twitter.com/"]:before,
+.social-networks a[href^="https://twitter.com/"]:before,
 .social-networks a[href^="https://www.twitter.com/"]:before {
     background-image: url(../images/icons/twitter.svg);
 }
 
-.social-networks a[href^="http://linkedin.com/"]:before, 
-.social-networks a[href^="http://www.linkedin.com/"]:before, 
-.social-networks a[href^="https://linkedin.com/"]:before, 
+.social-networks a[href^="http://linkedin.com/"]:before,
+.social-networks a[href^="http://www.linkedin.com/"]:before,
+.social-networks a[href^="https://linkedin.com/"]:before,
 .social-networks a[href^="https://www.linkedin.com/"]:before {
     background-image: url(../images/icons/linkedin.svg);
 }
@@ -751,4 +750,3 @@ footer.site-footer .social-networks a:visited{
   height: 70px;
   width: auto;
 }
-
