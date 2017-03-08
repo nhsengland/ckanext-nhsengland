@@ -628,7 +628,7 @@ li.resource-item .btn-group{
 
 .homepage .module-search .tags {
     background-color: transparent;
-    width: 40%;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -1317,12 +1317,6 @@ li.resource-item .btn-group{
     padding: 32px 0 32px 0;
 }
 
-.homepage .module-search .tags {
-    background-color: transparent;
-    width: 40%;
-    margin: 0 auto;
-}
-
 .homepage .module-search .tags .tag {
     background-color: #0072c6;
     color: white;
@@ -1330,6 +1324,7 @@ li.resource-item .btn-group{
     box-shadow: None;
     -moz-box-shadow: None;
     -webkit-box-shadow: None;
+    display: inline-block;
 }
 
 .homepage .module-search .tags h3 {
