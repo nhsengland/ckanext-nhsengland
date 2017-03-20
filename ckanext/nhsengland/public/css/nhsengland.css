@@ -410,7 +410,8 @@ footer ul.nav li {
     padding: 0px 6px;
 }
 
-footer.site-footer, footer.site-footer a{
+footer.site-footer, footer.site-footer .nav a
+{
     background-color: #e8edee;
     background-image: none;
     color: #425563;
@@ -1484,7 +1485,3 @@ footer.site-footer .social-networks a:visited{
 .module-narrow .module-footer{
     font-size: 16px;
 }
-
-
-
-
