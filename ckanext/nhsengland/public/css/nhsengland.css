@@ -383,10 +383,6 @@ nav .nav-pills>li>a.image{
     display: none;
 }
 
-article.module {
-    margin: 0px 30px;
-}
-
 .module-content.box {
     padding: 12px;
 }
@@ -395,8 +391,12 @@ article.module {
     background-color: white;
 }
 
-.module-content {
+.container .primary .module-content, .module-content{
     padding: 0px;
+}
+
+.container .media-grid{
+  margin: 0px;
 }
 
 footer,
