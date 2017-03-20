@@ -1,11 +1,15 @@
 <div class="container">
   <div class="row">
-    <footer class="pre-footer span12">
-      <ul class="nav nav-pills  pull-left">
-	<li>
-	  &copy; NHS England 2015
-	</li>
+</footer>
+  </div>
+</div>
 
+<footer class="site-footer">
+  <div class="container">
+    {% block footer_content %}
+     <div class="row">
+       <div class="span9">
+      <ul class="nav">
 	<li>
 	  <a href="http://www.england.nhs.uk/terms-and-conditions/">Terms &amp; Conditions</a>
 	</li>
@@ -18,17 +22,17 @@
 	<li>
 	  <a href="http://www.england.nhs.uk/accessibility/">Accessibility</a>
 	</li>
+	<li>
+	  <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v0.3.0</a>
+	</li>
       </ul>
-    </footer>
-  </div>
-</div>
-
-<footer class="site-footer">
-  <div class="container">
-    {% block footer_content %}
-    <h2>
-      {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
-    </h2>     
+       <div class="pull-right">
+	hello
+       </div>
+      </div>
+      <div class="col3">
+      </div>
+     </div>
     {% endblock %}
   </div>
 </footer>
