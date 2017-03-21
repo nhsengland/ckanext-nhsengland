@@ -181,7 +181,6 @@ nav .nav-pills>li>a.image{
     padding: 0 30px;
     width: 75%;
     box-sizing: border-box;
-    float: left;
 }
 
 
@@ -328,6 +327,11 @@ nav .nav-pills>li>a.image{
 .toolbar {
     margin-bottom: 0px;
 }
+
+.toolbar .breadcrumb{
+    margin-bottom: 6px;
+}
+
 
 .toolbar .breadcrumb li:after {
     content: "";
