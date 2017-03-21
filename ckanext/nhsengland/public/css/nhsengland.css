@@ -582,7 +582,7 @@ li.resource-item .btn-group{
 }
 
 .search-form .search-input.search-giant input {
-    width: 580px;
+    width: 680px;
 }
 
 .homepage .module-search .search-form .search-input button,
@@ -1266,14 +1266,6 @@ li.resource-item .btn-group{
 
 .homepage .module-search .module-content {
     background-color: transparent;
-}
-
-.homepage .module-search .search-form .search-input input {
-    width: 580px;
-}
-
-.search-form .search-input.search-giant input {
-    width: 580px;
 }
 
 .homepage .module-search .search-form .search-input button,
