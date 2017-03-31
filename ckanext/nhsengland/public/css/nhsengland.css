@@ -243,7 +243,7 @@ nav .nav-pills>li>a.image{
     color: white;
 }
 
-.nav-simple>li {
+.nav-simple .nav-item li, .nav-simple>li {
     background-color: #e8edee;
     margin-top: 5px;
     border-bottom: None;
@@ -254,6 +254,7 @@ nav .nav-pills>li>a.image{
 
 .nav-simple>li a{
     color: #425563;
+    font-size: 16px;
 }
 
 
@@ -503,6 +504,18 @@ a.btn[title="Link to a URL on the internet (you can also link to an API)"] {
    background: url("/images/sprite-resource-icons.png");
 }
 
+.module.module-resource{
+   margin-bottom: 40px;
+}
+
+.module.module-resource .module-content{
+   padding-top: 0;
+}
+
+.module.module-resource .module-content h1{
+   margin: 0 0 30px 0;
+}
+
 .dataset-heading a,
 .resource-item a.heading  {
     color: #a00054; text-decoration: none;
@@ -630,7 +643,7 @@ li.resource-item .btn-group{
 .homepage .module-search .module-content .heading {
     color: #FFF;
     text-align: center;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     padding: 32px 0 32px 0;
 }

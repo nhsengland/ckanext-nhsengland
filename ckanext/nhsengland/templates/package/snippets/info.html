@@ -9,7 +9,7 @@ Example:
 
 #}
 {% if pkg %}
-  {% if not hide_follow_button %}
+  {% if not hide_follow_button and c.userobj %}
   <section class="module module-narrow module-shallow">
     <div class="module context-info">
       <h2 class="module-heading"><i class="icon-building"></i> {{ _('Subscribe to updates') }}</h2>
