@@ -22,10 +22,11 @@
         <div class="top-logo">
 	    <hgroup class="header-strapline">
 	      {% block header_logo %}
-		  <a class="logo" href="http://www.england.nhs.uk"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
+	      <a class="logo" href="http://www.england.nhs.uk">
+                    <img src="/images/nhs-england-logo-rev.svg" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
 	      {% endblock %}
 	      <h1>
-	      {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
+                <h2>Data Catalogue</h2>
 	      </h1>
 	    </hgroup>
           </div>
