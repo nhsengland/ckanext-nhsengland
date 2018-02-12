@@ -603,9 +603,9 @@ li.resource-item .btn-group{
 
 .homepage .module-search .search-form .search-input button,
 .search-form .search-input.search-giant button {
-    background-color: #005eb8;
+    background-color: #0072ce;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    color: #ffffff;
+    color: white;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     padding: 4px;
     height: 52px;
@@ -613,7 +613,6 @@ li.resource-item .btn-group{
     width: 104px;
 }
 
-.homepage .module-search .search-form .search-input button,
 .search-form .search-input.search-giant button:hover {
     background-color: #0072ce;
     color: white;
