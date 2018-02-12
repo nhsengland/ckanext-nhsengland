@@ -172,6 +172,7 @@ nav .nav-pills>li>a.image{
     padding: 0 30px;
     width: 25%;
     box-sizing: border-box;
+    float: left;
 }
 
 .wrapper .primary{
