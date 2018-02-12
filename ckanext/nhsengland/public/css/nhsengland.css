@@ -432,9 +432,11 @@ footer ul.nav li {
 footer.site-footer, footer.site-footer a{
     background-color: #e8edee;
     background-image: none;
-    color: #425563;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+.site-footer .nav>li>a {
+    color: #425563;
 }
 
 footer.site-footer .nav a{
