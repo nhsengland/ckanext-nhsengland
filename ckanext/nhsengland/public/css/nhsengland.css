@@ -894,7 +894,7 @@ nav .nav-pills>li>a.image{
 }
 
 .nav > li a {
-    padding: 15px 22px;
+    padding: 15px 16px;
     margin-right: 4px;
     margin-left: 4px;
     margin-top: 0;
@@ -1484,7 +1484,3 @@ footer.site-footer .social-networks a:visited{
 .module-narrow .module-footer{
     font-size: 16px;
 }
-
-
-
-
