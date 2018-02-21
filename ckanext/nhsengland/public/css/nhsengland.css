@@ -819,3 +819,8 @@ footer.site-footer .social-networks a:visited{
 .module-narrow .module-footer{
     font-size: 16px;
 }
+
+/* Fix icon margin */
+.nav [class*=" fa-"] {
+    margin-right: 4px;
+}
