@@ -29,3 +29,11 @@ def get_extras(extras):
 
 def is_archived(tags):
     return any(t['name'] == 'archived' for t in tags)
+
+
+def archived_on(extras):
+    for extra in extras:
+        if extra['key'] == 'date_archived':
+            return extra['value']
+
+    return False

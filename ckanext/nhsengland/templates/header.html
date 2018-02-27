@@ -1,4 +1,5 @@
 {% set is_archived = h.is_archived(c.pkg_dict.tags) %}
+{% set archived_on = h.archived_on(c.pkg_dict.extras) %}
 
 {% block header_wrapper %}
 <header class="second-nav">
@@ -49,6 +50,9 @@
         {% if is_archived %}
         <div class="archived" style="clear:both">
           Archived
+          {% if archived_on %}
+          on {{ archived_on }}
+          {% endif %}
         </div>
         {% endif %}
 
