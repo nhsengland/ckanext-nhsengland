@@ -824,3 +824,14 @@ footer.site-footer .social-networks a:visited{
 .nav [class*=" fa-"] {
     margin-right: 4px;
 }
+
+/* Archived Datasets */
+.super-masthead.archived {
+    background-color: #a00054;
+    height: 120%;
+}
+.super-masthead .archived {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}

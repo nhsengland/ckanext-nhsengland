@@ -25,3 +25,7 @@ def get_collection(name):
 
 def get_extras(extras):
     return {i['key']:i['value'] for i in extras}
+
+
+def is_archived(tags):
+    return any(t['name'] == 'archived' for t in tags)
