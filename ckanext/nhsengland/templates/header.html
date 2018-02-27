@@ -20,26 +20,31 @@
     <div class="nav-wrapper">
       <div class="row">
         <div class="top-logo">
-	    <hgroup class="header-strapline">
-	      {% block header_logo %}
-	      <a class="logo" href="http://www.england.nhs.uk">
-                    <img src="/images/nhs-england-logo-rev.svg" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
-	      {% endblock %}
-	      <h1>
-                <h2>Data Catalogue</h2>
-	      </h1>
-	    </hgroup>
-          </div>
-          <div class="top-search">
-            <div class="search-input search-giant">
-              <form method="get" action="/dataset">
-               <input type="text" class="search" name="q" value="" autocomplete="off" />
-                 <button type="submit" class="btn btn-primary">
-		    Find Data
-                 </button>
-              </form>
-         </div>
+          <hgroup class="header-strapline">
+
+            {% block header_logo %}
+            <a class="logo" href="http://www.england.nhs.uk">
+              <img src="/images/nhs-england-logo-rev.svg" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
+            {% endblock %}
+
+            <h1>
+              <h2>Data Catalogue</h2>
+            </h1>
+
+          </hgroup>
         </div>
+
+        <div class="top-search">
+          <div class="search-input search-giant">
+            <form method="get" action="/dataset">
+             <input type="text" class="search" name="q" value="" autocomplete="off" />
+               <button type="submit" class="btn btn-primary">
+                  Find Data
+               </button>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
