@@ -835,3 +835,6 @@ footer.site-footer .social-networks a:visited{
     font-weight: bold;
     text-align: center;
 }
+.archived a {
+    color: #a00054;
+ }

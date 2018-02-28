@@ -18,6 +18,11 @@ Example:
 {% set title = package.title or package.name %}
 {% set notes = h.markdown_extract(package.notes, extract_length=truncate) %}
 
+{% set is_archived = h.is_archived(package.tags) %}
+{% if is_archived %}
+{% set title = "[Archived Content] " + title %}
+{% endif %}
+
 <li class="{{ item_class or "dataset-item" }}">
   {% block package_item_content %}
     <div class="dataset-content">
@@ -28,7 +33,15 @@ Example:
             {{ _('Private') }}
           </span>
         {% endif %}
+
+        {% if is_archived %}
+          <span class="archived">
+        {% endif %}
         {{ h.link_to(h.truncate(title, truncate_title), h.url_for(controller='package', action='read', id=package.name)) }}
+        {% if is_archived %}
+          </span>
+        {% endif %}
+
         {% if package.get('state', '').startswith('draft') %}
           <span class="label label-info">{{ _('Draft') }}</span>
         {% elif package.get('state', '').startswith('deleted') %}
