@@ -27,11 +27,7 @@ Example:
     {% endif %}
   {% endblock %}
   {% block datasets %}
-    {% if organization.packages %}
-      <strong class="count">{{ ungettext('{num} Dataset', '{num} Datasets', organization.packages).format(num=organization.packages) }}</strong>
-    {% else %}
-      <span class="count">{{ _('0 Datasets') }}</span>
-    {% endif %}
+    <strong class="count">{{ ungettext('{num} Dataset', '{num} Datasets', organization.package_count).format(num=organization.package_count) }}</strong>
   {% endblock %}
   {% block link %}
   <a href="{{ url }}" title="{{ _('View {organization_name}').format(organization_name=organization.display_name) }}" class="media-view">
