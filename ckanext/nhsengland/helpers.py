@@ -1,4 +1,6 @@
 import ckan.logic as logic
+from ckan.lib.helpers import _create_url_with_params
+from ckan.plugins.toolkit import request
 
 
 def split_resources(pkg_dict):
@@ -37,3 +39,24 @@ def archived_on(extras):
             return extra['value']
 
     return False
+
+
+def remove_archived_marker(facets):
+    try:
+        del facets['include_archives']
+    except KeyError:
+        pass
+
+    return facets
+
+
+def toggle_archives_url():
+    key = 'include_archives'
+
+    if key in request.params:
+        params = [p for p in request.params.items() if p[0] != key]
+    else:
+        params = [p for p in request.params.items()]
+        params.append((key, True))
+
+    return _create_url_with_params(params=params)

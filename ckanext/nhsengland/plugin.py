@@ -2,6 +2,7 @@ import routes.mapper
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 import ckan.lib.base as base
+import copy
 import datetime
 import time
 
@@ -100,16 +101,20 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IRoutes)
     plugins.implements(plugins.IDatasetForm)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IPackageController)
 
     def get_helpers(self):
-        from ckanext.nhsengland.helpers import split_resources, get_collection, get_extras, is_archived, archived_on
+        from ckanext.nhsengland.helpers import (archived_on, get_collection, get_extras, is_archived,
+                                                remove_archived_marker, split_resources, toggle_archives_url)
         return {
-            'frequencies'    : frequencies,
+            'archived_on': archived_on,
+            'frequencies': frequencies,
+            'get_collection': get_collection,
+            'get_extras': get_extras,
+            'is_archived': is_archived,
+            'remove_archived_marker': remove_archived_marker,
             'split_resources': split_resources,
-            'get_collection' : get_collection,
-            'get_extras'     : get_extras,
-            'is_archived'    : is_archived,
-            'archived_on'    : archived_on,
+            'toggle_archives_url': toggle_archives_url,
         }
 
     def update_config(self, config):
@@ -192,6 +197,69 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     def package_types(self):
         return []
+
+    def after_create(self, context, pkg_dict):
+        return pkg_dict
+
+    def after_delete(self, context, pkg_dict):
+        return pkg_dict
+
+    def after_search(self, search_results, search_params):
+        return search_results
+
+    def after_show(self, context, pkg_dict):
+        return pkg_dict
+
+    def after_update(self, context, pkg_dict):
+        return pkg_dict
+
+    def before_index(self, pkg_dict):
+        return pkg_dict
+
+    def _get_archived_params(self, q):
+        hide_archives = 'NOT tags:archived'
+        if q is None:
+            return hide_archives
+
+        if hide_archives not in q:
+            return hide_archives if q == '' else '{} {}'.format(q, hide_archives)
+
+        if q.startswith(hide_archives) or q.endswith(hide_archives):
+            return q.replace(hide_archives, '').strip(' ')
+
+        before, _, after = q.partition(hide_archives + ' ')
+        return before + after
+
+    def before_search(self, search_params):
+        include_archives = toolkit.request.params.get('include_archives')
+        if include_archives:
+            # Remove our include_archives param from the full query string.
+            # This is added by CKAN because we added to the GET params.
+            fq = search_params.get('fq', '')
+            new_params = copy.deepcopy(search_params)
+            new_params['fq'] = fq.replace('include_archives:"True" ', '')
+            return new_params
+
+        # Generate new search params with a modified q key including our
+        # archived tag filter.
+        new_params = copy.deepcopy(search_params)
+        new_params['q'] = self._get_archived_params(search_params.get('q'))
+        return new_params
+
+    def before_view(self, pkg_dict):
+        return pkg_dict
+
+    def create(self, entity):
+        return entity
+
+    def delete(self, entity):
+        return entity
+
+    def edit(self, entity):
+        return entity
+
+    def read(self, entity):
+        return entity
 
 
 class NHSEController(base.BaseController):
