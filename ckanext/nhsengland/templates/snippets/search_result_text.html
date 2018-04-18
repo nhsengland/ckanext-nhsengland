@@ -20,8 +20,7 @@ Example:
     {{ count }} datasets found for {{ query }}
     <p>
       <small>
-        {% if request.params.get('include_archives') %}
-        {% else %}
+        {% if not request.params.get('include_archives') %}
           Expand your search to <a href="{{ request.url }}&include_archives=True">include archived datasets</a>.
         {% endif %}
       </small>
@@ -30,11 +29,10 @@ Example:
   {% if count == 0 %}
     No Datasets found for "{{query}}".
     <p>
-    <small>
-      {% if not request.params.get('include_archives') %}
-   Expand your search to <a href="{{ request.url }}&include_archives=True">include archived datasets</a>.
-      {% else %}
-      {% endi
+      <small>
+        {% if not request.params.get('include_archives') %}
+           Expand your search to <a href="{{ request.url }}&include_archives=True">include archived datasets</a>.
+        {% endif %}
       </small>
     </p>
   {% endif %}
