@@ -21,9 +21,8 @@ Example:
     <p>
       <small>
         {% if request.params.get('include_archives') %}
-          Including archives
         {% else %}
-          Would you like to <a href="{{ request.url }}&include_archives=True">include archived datasets</a>.
+          Expand your search to <a href="{{ request.url }}&include_archives=True">include archived datasets</a>.
         {% endif %}
       </small>
     </p>
@@ -33,9 +32,8 @@ Example:
     <p>
     <small>
       {% if not request.params.get('include_archives') %}
-        Would you like to <a href="{{ request.url }}&include_archives=True">include archived datasets</a>.
+   Expand your search to <a href="{{ request.url }}&include_archives=True">include archived datasets</a>.
       {% else %}
-        Either live or archived.
       {% endi
       </small>
     </p>
