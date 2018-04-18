@@ -68,13 +68,6 @@
   {% endblock %}
 
 </form>
-
-{% if show_empty and count == 0 %}
-  {% trans %}
-    <p class="extra">Please try another search.</p>
-  {% endtrans %}
-{% endif %}
-
 {% if error %}
   {% trans %}
     <p><strong>There was an error while searching.</strong> Please try again.</p>
