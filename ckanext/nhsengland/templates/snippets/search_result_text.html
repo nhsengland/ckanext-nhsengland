@@ -17,7 +17,11 @@ Example:
   {% set text_no_query = "" %}
   {% set text_no_query_none = _('No datasets found') %}
   {% if not count == 0 %}
-    {{ count }} datasets found for {{ query }}
+    {% if query %}
+      {{ count }} datasets found for {{ query }}
+    {% else %}
+      {{ count }} datasets
+    {% endif %}
     <p>
       <small>
         {% if not request.params.get('include_archives') %}
