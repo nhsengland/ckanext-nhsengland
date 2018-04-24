@@ -104,8 +104,11 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     plugins.implements(plugins.IPackageController)
 
     def get_helpers(self):
-        from ckanext.nhsengland.helpers import (archived_on, get_collection, get_extras, is_archived,
-                                                remove_archived_marker, split_resources, toggle_archives_url)
+        from ckanext.nhsengland.helpers import (
+            archived_on, get_collection, get_extras, is_archived,
+            remove_archived_marker, split_resources, toggle_archives_url,
+            dataset_search
+        )
         return {
             'archived_on': archived_on,
             'frequencies': frequencies,
@@ -115,6 +118,7 @@ class NHSEnglandPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
             'remove_archived_marker': remove_archived_marker,
             'split_resources': split_resources,
             'toggle_archives_url': toggle_archives_url,
+            'dataset_search': dataset_search
         }
 
     def update_config(self, config):

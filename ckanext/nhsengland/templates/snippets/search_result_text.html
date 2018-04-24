@@ -24,18 +24,11 @@ Example:
     {% endif %}
     <p>
       <small>
-        {{ app_globals }}
-        and
-        {{ tmpl_context }}
-        {% if not request.params.get('include_archives') %}
+        {% if not request.params.get('include_archives') and h.dataset_search() %}
           Expand your search to
-            {% if query %}
-              <a href="{{ request.url }}&include_archives=True">
-            {% else %}
-              <a href="{{ request.url }}?include_archives=True">
-            {% endif %}
-              include archived datasets
-              </a>.
+          <a href="{{ h.toggle_archives_url() }}">
+            include archived datasets
+          </a>.
         {% endif %}
       </small>
     </p>
@@ -44,14 +37,10 @@ Example:
     No Datasets found for "{{query}}".
     <p>
       <small>
-        {% if not request.params.get('include_archives') %}
-        Expand your search to
-        {% if query %}
-          <a href="{{ request.url }}&include_archives=True">
-        {% else %}
-          <a href="{{ request.url }}?include_archives=True">
-        {% endif %}
-          include archived datasets
+        {% if not request.params.get('include_archives') and h.dataset_search() %}
+          Expand your search to
+          <a href="{{ h.toggle_archives_url() }}">
+            include archived datasets
           </a>.
         {% endif %}
       </small>
