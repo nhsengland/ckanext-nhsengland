@@ -24,6 +24,9 @@ Example:
     {% endif %}
     <p>
       <small>
+        {{ app_globals }}
+        and
+        {{ tmpl_context }}
         {% if not request.params.get('include_archives') %}
           Expand your search to
             {% if query %}
