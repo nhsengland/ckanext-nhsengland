@@ -1,6 +1,12 @@
 {% extends "page.html" %}
 
 {% set pkg = c.pkg_dict or pkg_dict %}
+{% set title = pkg.title or pkg.name %}
+
+{% set is_archived = h.is_archived(c.pkg_dict.tags) %}
+{% if is_archived %}
+{% set title = "[Archived Content] " + title %}
+{% endif %}
 
 {% block breadcrumb_content_selected %} class="active"{% endblock %}
 
@@ -33,7 +39,7 @@
     {% endif %}
     <h1 data-intro="The name of the dataset." data-position="top">
       {% block page_heading %}
-        {{ pkg.title or pkg.name }}
+        {{ title }}
         {% if pkg.state.startswith('draft') %}
           [{{ _('Draft') }}]
         {% endif %}
