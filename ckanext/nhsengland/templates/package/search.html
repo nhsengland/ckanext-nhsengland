@@ -2,7 +2,7 @@
 
 {% block form %}
   {% set facets = {
-    'fields': c.fields_grouped,
+    'fields': h.remove_archived_marker(c.fields_grouped),
     'search': c.search_facets,
     'titles': c.facet_titles,
     'translated_fields': c.translated_fields,
@@ -32,4 +32,33 @@
       </div>
     </div>
   </section>
+{% endblock %}
+
+{% block secondary_content %}
+<div class="filters">
+  <div>
+    {% for facet in c.facet_titles %}
+      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet) }}
+    {% endfor %}
+
+    <section class="module module-narrow module-shallow" style="margin-bottom:5px">
+        <h2 class="module-heading">
+            <i class="fa-medium fa-filter"></i>
+            Archives
+        </h2>
+
+        {% set title = 'Hide Archives' if request.params.get('include_archives') else 'Show Archives' %}
+        <nav>
+            <ul class="unstyle nav nav-simple nav-facet">
+                <li class="nav-item">
+                    <a href="{{ h.toggle_archives_url() }}" title="{{ title }}">
+                        <span>{{ title }}</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+  </div>
+  <a class="close no-text hide-filters"><i class="fa fa-times-circle"></i><span class="text">close</span></a>
+</div>
 {% endblock %}

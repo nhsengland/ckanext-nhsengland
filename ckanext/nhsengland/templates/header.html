@@ -1,3 +1,5 @@
+{% set is_archived = h.is_archived(c.pkg_dict.tags) %}
+{% set archived_on = h.archived_on(c.pkg_dict.extras) %}
 
 {% block header_wrapper %}
 <header class="second-nav">
@@ -15,31 +17,45 @@
 </div>
 </div>
 </header>
-<header class="super-masthead">
+<header class="super-masthead{% if is_archived %} archived{% endif %}">
   <div class="container">
     <div class="nav-wrapper">
       <div class="row">
         <div class="top-logo">
-	    <hgroup class="header-strapline">
-	      {% block header_logo %}
-	      <a class="logo" href="http://www.england.nhs.uk">
-                    <img src="/images/nhs-england-logo-rev.svg" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
-	      {% endblock %}
-	      <h1>
-                <h2>Data Catalogue</h2>
-	      </h1>
-	    </hgroup>
-          </div>
-          <div class="top-search">
-            <div class="search-input search-giant">
-              <form method="get" action="/dataset">
-               <input type="text" class="search" name="q" value="" autocomplete="off" />
-                 <button type="submit" class="btn btn-primary">
-		    Find Data
-                 </button>
-              </form>
-         </div>
+          <hgroup class="header-strapline">
+
+            {% block header_logo %}
+            <a class="logo" href="http://www.england.nhs.uk">
+              <img src="/images/nhs-england-logo-rev.svg" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" data-intro="Clicking on this logo will always take you back to the homepage (just in case you get lost)."/></a>
+            {% endblock %}
+
+            <h1>
+              <h2>Data Catalogue</h2>
+            </h1>
+
+          </hgroup>
         </div>
+
+        <div class="top-search">
+          <div class="search-input search-giant">
+            <form method="get" action="/dataset">
+             <input type="text" class="search" name="q" value="" autocomplete="off" />
+               <button type="submit" class="btn btn-primary">
+                  Find Data
+               </button>
+            </form>
+          </div>
+        </div>
+
+        {% if is_archived %}
+        <div class="archived" style="clear:both">
+          Archived
+          {% if archived_on %}
+          on {{ archived_on }}
+          {% endif %}
+        </div>
+        {% endif %}
+
       </div>
     </div>
   </div>
