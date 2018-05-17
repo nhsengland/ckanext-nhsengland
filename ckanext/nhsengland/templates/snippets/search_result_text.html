@@ -12,11 +12,40 @@ Example:
 
 #}
 {% if type == 'dataset' %}
-  {% set text_query = ungettext('{number} dataset found for "{query}"', '{number} datasets found for "{query}"', count) %}
-  {% set text_query_none = _('No datasets found for "{query}"') %}
-  {% set text_no_query = ungettext('{number} dataset found', '{number} datasets found', count) %}
+  {% set text_query = "" %}
+  {% set text_query_none = "" %}
+  {% set text_no_query = "" %}
   {% set text_no_query_none = _('No datasets found') %}
-
+  {% if not count == 0 %}
+    {% if query %}
+      {{ count }} datasets found for {{ query }}
+    {% else %}
+      {{ count }} datasets
+    {% endif %}
+    <p>
+      <small>
+        {% if not request.params.get('include_archives') and h.dataset_search() %}
+          Expand your search to
+          <a href="{{ h.toggle_archives_url() }}">
+            include archived datasets
+          </a>.
+        {% endif %}
+      </small>
+    </p>
+  {% endif %}
+  {% if count == 0 and query %}
+    No Datasets found for "{{ query }}".
+    <p>
+      <small>
+        {% if not request.params.get('include_archives') and h.dataset_search() %}
+          Expand your search to
+          <a href="{{ h.toggle_archives_url() }}">
+            include archived datasets
+          </a>.
+        {% endif %}
+      </small>
+    </p>
+  {% endif %}
 {% elif type == 'group' %}
   {% set text_query = ungettext('{number} group found for "{query}"', '{number} groups found for "{query}"', count) %}
   {% set text_query_none = _('No groups found for "{query}"') %}
