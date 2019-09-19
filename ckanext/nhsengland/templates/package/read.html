@@ -5,7 +5,7 @@
 {% block primary_content_inner %}
   {{ super() }}
   <p>
-    {{ pkg.notes }}
+    {{ h.render_markdown(pkg.notes) }}
   </p>
   {% block package_description %}
 
