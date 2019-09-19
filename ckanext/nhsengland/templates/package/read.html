@@ -4,6 +4,9 @@
 
 {% block primary_content_inner %}
   {{ super() }}
+  <p>
+    {{ pkg.notes }}
+  </p>
   {% block package_description %}
 
     {% block package_notes %}
