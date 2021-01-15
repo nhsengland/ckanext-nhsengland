@@ -9,13 +9,13 @@
           <ul class="unstyled nav nav-simple featured-publishers">
             {% for org in 'hscic nhs-england ons'.split() %}
             <li>
-              <a href="/organization/{{ org }}" title="">
+              <a href="/datacatalogue/organization/{{ org }}" title="">
                 {{ h.get_organization(org=org)['display_name'] }}
               </a>
             </li>
             {% endfor %}
             <li>
-              <a href="/organization" title="">
+              <a href="/datacatalogue/organization" title="">
                 <b>See all publishers</b>
               </a>
             </li>

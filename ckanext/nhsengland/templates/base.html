@@ -64,13 +64,13 @@
 
       {% block styles %}
         {{ super() }}
-        <link rel="stylesheet" href="/base/css/custom.css" />
+        <link rel="stylesheet" href="/datacatalogue/base/css/custom.css" />
       {% endblock %}
     #}
     {%- block styles %}
       {% resource g.main_css[6:] %}
-      <link rel="stylesheet" href="/css/nhsengland.css" />
-      <link rel="stylesheet" href="/css/introjs.min.css" />
+      <link rel="stylesheet" href="/datacatalogue/css/nhsengland.css" />
+      <link rel="stylesheet" href="/datacatalogue/css/introjs.min.css" />
     {% endblock %}
 
     {% block head_extras %}
