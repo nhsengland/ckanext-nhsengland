@@ -838,3 +838,8 @@ footer.site-footer .social-networks a:visited{
 .archived a {
     color: #a00054;
  }
+
+/* If there is only one breadcrumb, don't show it */
+.breadcrumb > li.active:first-child > a {
+    display: none;
+}
